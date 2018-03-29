@@ -97,6 +97,29 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+
+#team-contener{
+    display: flex;
+    width: 100%;
+    padding: 30px;
+}
+
+#team-contener > .team-item{
+    padding: 10px;
+    margin: 10px;
+}
+
+#team-contener .team-img{
+    border: solid 3px #cccccc;
+}
+
+.title{
+    font-weight: 700;
+}
 
 
 
