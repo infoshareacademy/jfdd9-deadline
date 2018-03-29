@@ -100,26 +100,54 @@ textarea {
 body{
     font-family: 'Lato', sans-serif;
 }
-nav {
-    display: inline-block;
+nav{
+    display: table-row;
 }
 #navbar{
     position: fixed;
     background-color: #cccccc;
-    width: 1000px;
-    height: 150px;
-    margin: 0px;
-}
-
-li{
-    font-size: 40px;
-    display: inline-block;
-    border-width: 10px;
-    border-radius: 5px;
-    border-color: white;
+    width: auto;
+    padding-left: 0px;
 
 }
+#logo{
+    padding: 20px;
+}
+#logo figure{
+    padding: 0px;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+#logo img{
+    height: 68px;
+    width: 68px;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 
+}
+nav li{
+    display: inline;
+    background-color: red;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 20px;
+    width: auto;
+
+}
+a.nav-link{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+
+
+}
 
 
 #team-contener{
