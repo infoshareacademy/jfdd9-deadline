@@ -113,12 +113,19 @@ body{
     margin: 10px;
 }
 
-#team-contener .team-img{
-    border: solid 3px #cccccc;
+/*#team-contener .team-img{*/
+    /*border: solid 3px #cccccc;*/
+/*}*/
+
+h5.title{
+    font-weight: 700;
+    margin: 5px 0;
+    text-align: center;
+    font-size: 1em;
 }
 
-.title{
-    font-weight: 700;
+.team-item a{
+    text-decoration: none;
 }
 
 
