@@ -139,6 +139,12 @@ h5.title{
     text-shadow: 2px 2px 5px #ccc;
 }
 
+.usability-list {
+    width: 300px;
+    position: relative;
+    height: 200px;
+}
+
 
 
 
