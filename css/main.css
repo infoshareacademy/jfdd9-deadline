@@ -16,6 +16,7 @@ html {
     line-height: 1.4;
 }
 
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -139,10 +140,16 @@ h5.title{
     text-shadow: 2px 2px 5px #ccc;
 }
 
+.usability {
+    text-align: center;
+}
+
 .usability-list {
-    width: 300px;
-    position: relative;
+    width: 48%;
+    /*position:*/
     height: 200px;
+    display: inline-block;
+    background-color: red;
 }
 
 
