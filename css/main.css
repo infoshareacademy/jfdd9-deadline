@@ -105,8 +105,7 @@ body{
 #team-contener{
     display: flex;
     justify-content: space-around;
-    width: 100%;
-    padding: 30px;
+    /*width: 100%;*/
 }
 
 #team-contener > .team-item{
@@ -137,6 +136,11 @@ h5.title{
     font-size: 3em;
     margin: 0;
     text-shadow: 2px 2px 5px #ccc;
+}
+
+section{
+    margin: 0;
+    padding: 30px;
 }
 
 
