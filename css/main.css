@@ -100,6 +100,26 @@ textarea {
 body{
     font-family: 'Lato', sans-serif;
 }
+nav {
+    display: inline-block;
+}
+#navbar{
+    position: fixed;
+    background-color: #cccccc;
+    width: 1000px;
+    height: 150px;
+    margin: 0px;
+}
+
+li{
+    font-size: 40px;
+    display: inline-block;
+    border-width: 10px;
+    border-radius: 5px;
+    border-color: white;
+
+}
+
 
 
 #team-contener{
