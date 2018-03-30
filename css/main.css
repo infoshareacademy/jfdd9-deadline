@@ -104,6 +104,7 @@ body{
 section{
     margin: 0;
     padding: 30px;
+    box-shadow: 0 3px 10px #000c;
 }
 
 h5.title{
@@ -156,8 +157,13 @@ h5.title{
     sekcja #subscribe
 */
 
+#subscribe {
+    background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+    display: flex;
+}
+
 .subscribe{
-    max-width: 800px;
+    flex-grow: 1;
     padding: 32px;
     border: 1px solid #ccc;
     border-radius: 40px;
@@ -224,6 +230,8 @@ button.subscribe-submit:hover{
     font-size: 3em;
     font-weight: 700;
     margin-bottom: 5px;
+    color: #4fa5da;
+    text-shadow: 1px 1px 3px #aaa;
 }
 .subscribe-label > div p{
     margin: 0;
