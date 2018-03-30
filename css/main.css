@@ -141,16 +141,19 @@ h5.title{
 }
 
 .usability {
-    text-align: left;
-}
 
+    text-align: left;
+    /*position: relative;
+    height: 500px;*/
+}
+/*
 .right {
     float: right;
 }
 
 .left {
-    float: left;
-}
+    left: 50%;
+}*/
 
 .usability-li {
     text-align: right;
@@ -158,6 +161,7 @@ h5.title{
 
 .usability-ul {
     display: inline-block;
+    position: relative;
 }
 
 .clear {
