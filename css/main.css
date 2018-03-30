@@ -133,6 +133,7 @@ h5.title{
     background-image: url("../img/hero-background.jpg");
     background-size: cover;
     background-position: center;
+    height: 800px;
 }
 
 
