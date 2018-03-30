@@ -97,30 +97,25 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-body{
+body {
     font-family: 'Lato', sans-serif;
 }
 nav{
-    display: table-row;
-}
-#navbar{
+    display: inline-block;
     position: fixed;
-    background-color: #cccccc;
+}
+#navbar {
+    /*position: fixed; */
+
     width: auto;
     padding-left: 0px;
-
 }
-#logo{
+#logo {
     padding: 20px;
+    border-radius: 30px;
 }
-#logo figure{
-    padding: 0px;
-    -webkit-margin-before: 0em;
-    -webkit-margin-after: 0em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-}
-#logo img{
+
+#logo img {
     height: 68px;
     width: 68px;
     padding-left: 0px;
@@ -132,16 +127,17 @@ nav{
     margin-bottom: 0px;
 
 }
-nav li{
+nav li {
     display: inline;
     background-color: red;
-    border-radius: 10px;
+    border-radius: 20px;
     margin: 15px;
     padding: 20px;
     width: auto;
 
 }
-a.nav-link{
+a.nav-link {
+    cursor: default;
     font-size: 20px;
     text-decoration: none;
     color: white;
@@ -150,22 +146,22 @@ a.nav-link{
 }
 
 
-#team-contener{
+#team-contener {
     display: flex;
     width: 100%;
     padding: 30px;
 }
 
-#team-contener > .team-item{
+#team-contener > .team-item {
     padding: 10px;
     margin: 10px;
 }
 
-#team-contener .team-img{
+#team-contener .team-img {
     border: solid 3px #cccccc;
 }
 
-.title{
+.title {
     font-weight: 700;
 }
 
