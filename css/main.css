@@ -125,6 +125,30 @@ h5.title{
 }
 
 
+/* ---------------------------------------------------------------------
+    sekcja #header
+*/
+
+#header {
+    background-image: url("../img/hero-background.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+a.header-button{
+    border: 7px solid #ffff;
+    padding: 25px 60px;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 1px 1px 3px #ccc;
+    box-shadow: 1px 1px 3px #ccc;
+    background: #0808084d;
+}
 
 /* ---------------------------------------------------------------------
     sekcja #team
@@ -218,7 +242,7 @@ button.subscribe-submit:hover{
 .subscribe-label i{
     font-size: 6em;
     margin: 20px;
-    color: #4fa5da;
+    color: #e0785d;
 }
 .subscribe-label > div {
     display: inline-block;
@@ -230,7 +254,7 @@ button.subscribe-submit:hover{
     font-size: 3em;
     font-weight: 700;
     margin-bottom: 5px;
-    color: #4fa5da;
+    color: #e46140;
     text-shadow: 1px 1px 3px #aaa;
 }
 .subscribe-label > div p{
