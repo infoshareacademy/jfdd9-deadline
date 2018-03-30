@@ -101,18 +101,16 @@ body{
     font-family: 'Lato', sans-serif;
 }
 nav{
-    display: inline-block;
+    background-color: #f04510;
+    display: inline;
     position: fixed;
+    z-index: 9999;
+    width: 100%;
 }
-#navbar {
-    /*position: fixed; */
 
-    width: auto;
-    padding-left: 0px;
-}
 #logo {
     padding: 20px;
-    border-radius: 30px;
+
 }
 
 #logo img {
@@ -129,11 +127,8 @@ nav{
 }
 nav li {
     display: inline;
-    background-color: red;
-    border-radius: 20px;
     margin: 15px;
     padding: 20px;
-    width: auto;
 
 }
 #navbar .nav-link {
@@ -141,7 +136,6 @@ nav li {
     font-size: 20px;
     text-decoration: none;
     color: white;
-
 
 }
 
