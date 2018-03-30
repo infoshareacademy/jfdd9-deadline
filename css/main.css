@@ -151,6 +151,43 @@ a.header-button{
     background: #0808084d;
 }
 
+/*sekcja usability */
+.usability {
+
+    text-align: center;
+    /*position: relative;
+    height: 500px;*/
+}
+
+.right {
+    float: right;
+    margin-right: 50px;
+}
+/*
+.left {
+    left: 50%;
+}*/
+
+.usability-li {
+    text-align: justify-all;
+
+}
+
+.usability-ul {
+    display: inline-block;
+    position: relative;
+    width: 40%;
+    list-style-type: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.usability-descr {
+    height: auto;
+}
+
 /* ---------------------------------------------------------------------
     sekcja #team
 */
