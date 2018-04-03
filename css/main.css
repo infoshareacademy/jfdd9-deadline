@@ -231,6 +231,71 @@ a.header-button{
 .usability-descr {
     height: auto;
 }
+.usability-bezpiecz {
+    background-image: url("../img/usability1.jpg");
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+.usability-zgod {
+    background-image: url("../img/usability2.jpg");
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+.usability-respon {
+    background-image: url("../img/usability3.jpg");
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+.usability-wspol {
+    background-image: url("../img/userability4.jpg");
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+.usability-intui {
+    background-image: url("../img/usability5.jpg");
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+.usability-efekt {
+    background-image: url("../img/usability6.jpg");
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+.usability-satys {
+    background-image: url("../img/usability7.jpg");
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+.usability-powt {
+    background-image: url("../img/usability8.jpg");
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+
 
 
 
