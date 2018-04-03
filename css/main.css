@@ -342,6 +342,7 @@ form.subscribe-form {
     position: relative;
     max-width: 80%;
     display: block;
+    margin: 0 auto;
 }
 
 
@@ -367,11 +368,17 @@ button.subscribe-submit{
     position: absolute;
     top: 0px;
     right: -41px;
-    padding: 15px;
+    padding: 6px 15px;
     border: 1px solid #ccc;
     border-radius: 0 26px 26px 0;
     font-size: 1.3em;
     /*transition: to do;*/
+}
+button.subscribe-submit i{
+    padding: 0 20px;
+    font-weight: bold;
+    color: #e46140;
+    font-size: 2em;
 }
 button.subscribe-submit:focus{
     outline: none;
@@ -380,7 +387,9 @@ button.subscribe-submit:hover{
     background: #aaa;
 }
 
-
+.subscribe-label{
+    margin-bottom: 20px;
+}
 .subscribe-label i{
     font-size: 6em;
     margin: 20px;
