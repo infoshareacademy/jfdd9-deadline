@@ -253,6 +253,9 @@ a.header-button:hover{
 
 .usability-li {
     text-align: justify-all;
+    clear:both;
+    width: 100%;
+    display: block;
 
 }
 
@@ -261,6 +264,7 @@ a.header-button:hover{
     position: relative;
     width: 40%;
     list-style-type: none;
+    margin-top:50px;
 }
 
 .clear {
@@ -270,6 +274,67 @@ a.header-button:hover{
 .usability-descr {
     height: auto;
 }
+
+.usability-image{
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.usability-bezpiecz {
+    background-image: url("../img/usability1.jpg");
+    background-position-x: 220px;
+    background-position-y: 350px;
+
+
+}
+.usability-zgod {
+    background-image: url("../img/usability2.jpg");
+    background-position-x: 200px;
+    background-position-y: 350px;
+
+}
+.usability-respon {
+    background-image: url("../img/usability3.jpg");
+    background-position-x: center;
+    background-position-y: 200px;
+
+}
+.usability-wspol {
+    background-image: url("../img/userability4.jpg");
+    background-position-y: 300px;
+    background-position-x: 220px;
+
+}
+.usability-intui {
+    background-image: url("../img/usability5.jpg");
+    background-position-x: center;
+    background-position-y: center;
+
+}
+.usability-efekt {
+    background-image: url("../img/usability6.jpg");
+    background-position-y: center;
+
+}
+.usability-satys {
+    background-image: url("../img/usability7.jpg");
+    background-position-y: 310px;
+    background-position-x: center;
+
+}
+.usability-powt {
+    background-image: url("../img/usability8.jpg");
+    background-position-x: right;
+    background-position-y: 320px;
+
+}
+
+
+
 
 /* ---------------------------------------------------------------------
     sekcja #team
