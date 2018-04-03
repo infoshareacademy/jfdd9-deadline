@@ -101,23 +101,18 @@ body{
     font-family: 'Lato', sans-serif;
 }
 nav{
-    display: inline-block;
+    background-color: #f04510;
+    display: inline;
     position: fixed;
+    z-index: 9999;
+    width: 100%;
+    box-shadow: 0 3px 10px #000c;
 }
-#navbar {
-    /*position: fixed; */
 
-    width: auto;
-    padding-left: 0px;
-}
-#logo {
-    padding: 20px;
-    border-radius: 30px;
-}
+
 
 #logo img {
-    height: 68px;
-    width: 68px;
+    height: 50px;
     padding-left: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -129,25 +124,37 @@ nav{
 }
 nav li {
     display: inline;
-    background-color: red;
-    border-radius: 20px;
     margin: 15px;
     padding: 20px;
-    width: auto;
 
 }
 #navbar .nav-link {
     cursor: default;
     font-size: 20px;
+    text-transform: uppercase;
     text-decoration: none;
     color: white;
-
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px #5f5e5e;
+    transition: text-shadow 1s;
+}
+#navbar .nav-link:hover {
+    cursor: default;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px #000000;
+    transition: text-shadow 1s;
 
 }
 
 section{
     margin: 0;
-    padding: 30px;
+    padding: 80px;
     box-shadow: 0 3px 10px #000c;
 }
 
@@ -160,12 +167,14 @@ h5.title{
 
 .section-title{
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     font-weight: 900;
     text-align: center;
-    font-size: 3em;
+    font-size: 4em;
     margin: 0;
-    text-shadow: 2px 2px 5px #ccc;
+    margin-bottom: 32px;
+    text-shadow: 2px 2px 5px #7d7a7a;
+    color: #383838;
 }
 
 
@@ -180,19 +189,51 @@ h5.title{
     height: 800px;
 }
 
+#header h1{
+    margin-top: 150px;
+    margin-left: 50px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 12px;
+    font-size: 4em;
+    color: #fff;
+    text-shadow: 3px 3px 10px #000;
+}
+
+#header p{
+    max-width: 760px;
+    margin-left: 20px;
+    padding: 15px 25px;
+    background: #06060659;
+    border-radius: 43px;
+    font-size: 1.5em;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+    margin-bottom: 68px;
+}
 
 a.header-button{
-    border: 7px solid #ffff;
+    border: 7px solid #e0785c;
     padding: 25px 60px;
     font-size: 2em;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 900;
-    color: #fff;
+    color: #e3613f;
     text-decoration: none;
     text-shadow: 1px 1px 3px #ccc;
     box-shadow: 1px 1px 3px #ccc;
-    background: #0808084d;
+    background: #ffffff54;
+    margin-left: 127px;
+    transition: background-color 0.2s linear, border-color 0.2s linear;
+}
+
+a.header-button:hover{
+    background: #e46140;
+    color: #ffff;
+    border-color: #e46140;
+    text-shadow: 1px 1px 3px #464141;
+    transition: background-color 0.2s linear, border-color 0.2s linear;
 }
 
 /*sekcja usability */
@@ -214,6 +255,9 @@ a.header-button{
 
 .usability-li {
     text-align: justify-all;
+    clear:both;
+    width: 100%;
+    display: block;
 
 }
 
@@ -222,6 +266,7 @@ a.header-button{
     position: relative;
     width: 40%;
     list-style-type: none;
+    margin-top:50px;
 }
 
 .clear {
@@ -232,9 +277,74 @@ a.header-button{
     height: auto;
 }
 
+.usability-image{
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.usability-bezpiecz {
+    background-image: url("../img/usability1.jpg");
+    background-position-x: 220px;
+    background-position-y: 350px;
+
+
+}
+.usability-zgod {
+    background-image: url("../img/usability2.jpg");
+    background-position-x: 200px;
+    background-position-y: 350px;
+
+}
+.usability-respon {
+    background-image: url("../img/usability3.jpg");
+    background-position-x: center;
+    background-position-y: 200px;
+
+}
+.usability-wspol {
+    background-image: url("../img/userability4.jpg");
+    background-position-y: 300px;
+    background-position-x: 220px;
+
+}
+.usability-intui {
+    background-image: url("../img/usability5.jpg");
+    background-position-x: center;
+    background-position-y: center;
+
+}
+.usability-efekt {
+    background-image: url("../img/usability6.jpg");
+    background-position-y: center;
+
+}
+.usability-satys {
+    background-image: url("../img/usability7.jpg");
+    background-position-y: 310px;
+    background-position-x: center;
+
+}
+.usability-powt {
+    background-image: url("../img/usability8.jpg");
+    background-position-x: right;
+    background-position-y: 320px;
+
+}
+
+
+
+
 /* ---------------------------------------------------------------------
     sekcja #team
 */
+
+#team{
+    background-color: #f1f1f1;
+}
 
 #team-contener{
     display: flex;
