@@ -111,7 +111,7 @@ nav{
     box-shadow: 0 3px 10px #000c;
 }
 nav ul{
-
+    clear: both;
     margin: 0px;
 }
 
@@ -148,7 +148,7 @@ nav li {
     font-weight: 700;
     letter-spacing: 1px;
     text-shadow: 1px 1px 3px #5f5e5e;
-    transition: text-shadow 1s;
+    transition: text-shadow 0.2s;
 
 }
 #navbar .nav-link:hover {
@@ -159,7 +159,7 @@ nav li {
     color: white;
     font-weight: 700;
     letter-spacing: 1px;
-    text-shadow: 5px 5px 10px #000000;
+    text-shadow: 0px 3px 5px #771d04;
     transition: text-shadow 0.2s;
 
 }
@@ -170,7 +170,6 @@ nav li {
 }
 #logo {
     float: left;
-
 }
 
 section{
