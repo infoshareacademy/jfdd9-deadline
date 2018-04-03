@@ -222,10 +222,10 @@ a.header-button{
     color: #e3613f;
     text-decoration: none;
     text-shadow: 1px 1px 3px #ccc;
-    box-shadow: 1px 1px 3px #ccc;
+    box-shadow: 2px 3px 10px #5d5b5b;
     background: #ffffff54;
     margin-left: 127px;
-    transition: background-color 0.2s linear, border-color 0.2s linear;
+    transition: background-color 0.2s linear, border-color 0.2s linear, color 0.2s linear, box-shadow 0.5s linear;
 }
 
 a.header-button:hover{
@@ -233,7 +233,8 @@ a.header-button:hover{
     color: #ffff;
     border-color: #e46140;
     text-shadow: 1px 1px 3px #464141;
-    transition: background-color 0.2s linear, border-color 0.2s linear;
+    box-shadow: 1px 1px 40px 2px #1f1f1fcc;
+    transition: background-color 0.2s linear, border-color 0.2s linear, color 0.2s linear, box-shadow 0.5s linear;
 }
 
 /*sekcja usability */
