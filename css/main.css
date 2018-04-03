@@ -653,3 +653,15 @@ button.subscribe-submit:hover{
         page-break-after: avoid;
     }
 }
+
+/*features*/
+.features {
+    width: 24%;
+    height: 200px;
+    text-align: center;
+}
+
+.features-flex {
+    display: flex;
+    justify-content: space-around;
+}
