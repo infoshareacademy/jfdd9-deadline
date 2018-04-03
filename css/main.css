@@ -100,6 +100,7 @@ textarea {
 body{
     font-family: 'Lato', sans-serif;
 }
+/* ustawienia stylu navbara i elementów*/
 nav{
     background-color: #f04510;
     display: block;
@@ -109,7 +110,10 @@ nav{
     height: auto;
     box-shadow: 0 3px 10px #000c;
 }
+nav ul{
 
+    margin: 0px;
+}
 
 
 #logo img {
@@ -155,8 +159,8 @@ nav li {
     color: white;
     font-weight: 700;
     letter-spacing: 1px;
-    text-shadow: 1px 1px 3px #000000;
-    transition: text-shadow 1s;
+    text-shadow: 5px 5px 10px #000000;
+    transition: text-shadow 0.2s;
 
 }
 .right-side{
@@ -174,7 +178,7 @@ section{
     padding: 80px;
     box-shadow: 0 3px 10px #000c;
 }
-
+/*--------------*/
 h5.title{
     font-weight: 700;
     margin: 5px 0;
