@@ -102,17 +102,19 @@ body{
 }
 nav{
     background-color: #f04510;
-    display: inline;
+    display: block;
     position: fixed;
     z-index: 9999;
     width: 100%;
+    height: auto;
     box-shadow: 0 3px 10px #000c;
 }
 
 
 
 #logo img {
-    height: 50px;
+    height: 25px;
+    width: 100px;
     padding-left: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -120,15 +122,20 @@ nav{
     margin-right: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
+    cursor: default;
 
 }
 nav li {
+
     display: inline;
-    margin: 15px;
-    padding: 20px;
+    margin: 5px 15px;
+    padding: 10px;
+
+
 
 }
 #navbar .nav-link {
+
     cursor: default;
     font-size: 20px;
     text-transform: uppercase;
@@ -138,6 +145,7 @@ nav li {
     letter-spacing: 1px;
     text-shadow: 1px 1px 3px #5f5e5e;
     transition: text-shadow 1s;
+
 }
 #navbar .nav-link:hover {
     cursor: default;
@@ -149,6 +157,15 @@ nav li {
     letter-spacing: 1px;
     text-shadow: 1px 1px 3px #000000;
     transition: text-shadow 1s;
+
+}
+.right-side{
+    position: relative;
+    display: inline-block;
+    float: right;
+}
+#logo {
+    float: left;
 
 }
 
@@ -167,14 +184,12 @@ h5.title{
 
 .section-title{
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     font-weight: 900;
     text-align: center;
-    font-size: 4em;
+    font-size: 3em;
     margin: 0;
-    margin-bottom: 32px;
-    text-shadow: 2px 2px 5px #7d7a7a;
-    color: #383838;
+    text-shadow: 2px 2px 5px #ccc;
 }
 
 
@@ -255,9 +270,6 @@ a.header-button:hover{
 
 .usability-li {
     text-align: justify-all;
-    clear:both;
-    width: 100%;
-    display: block;
 
 }
 
@@ -266,7 +278,6 @@ a.header-button:hover{
     position: relative;
     width: 40%;
     list-style-type: none;
-    margin-top:50px;
 }
 
 .clear {
@@ -277,74 +288,9 @@ a.header-button:hover{
     height: auto;
 }
 
-.usability-image{
-    width: 150px;
-    height: 150px;
-    display: inline-block;
-    float: left;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.usability-bezpiecz {
-    background-image: url("../img/usability1.jpg");
-    background-position-x: 220px;
-    background-position-y: 350px;
-
-
-}
-.usability-zgod {
-    background-image: url("../img/usability2.jpg");
-    background-position-x: 200px;
-    background-position-y: 350px;
-
-}
-.usability-respon {
-    background-image: url("../img/usability3.jpg");
-    background-position-x: center;
-    background-position-y: 200px;
-
-}
-.usability-wspol {
-    background-image: url("../img/userability4.jpg");
-    background-position-y: 300px;
-    background-position-x: 220px;
-
-}
-.usability-intui {
-    background-image: url("../img/usability5.jpg");
-    background-position-x: center;
-    background-position-y: center;
-
-}
-.usability-efekt {
-    background-image: url("../img/usability6.jpg");
-    background-position-y: center;
-
-}
-.usability-satys {
-    background-image: url("../img/usability7.jpg");
-    background-position-y: 310px;
-    background-position-x: center;
-
-}
-.usability-powt {
-    background-image: url("../img/usability8.jpg");
-    background-position-x: right;
-    background-position-y: 320px;
-
-}
-
-
-
-
 /* ---------------------------------------------------------------------
     sekcja #team
 */
-
-#team{
-    background-color: #f1f1f1;
-}
 
 #team-contener{
     display: flex;
@@ -374,12 +320,8 @@ a.header-button:hover{
 */
 
 #subscribe {
-    /*background-image: url("../img/white-background.png");*/
-    background: url(../img/subscribe-background.jpg) no-repeat fixed 100%;
+    background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
     display: flex;
-    background-size: cover;
-    background-position: center;
-    padding: 201px 80px;
 }
 
 .subscribe{
