@@ -101,23 +101,18 @@ body{
     font-family: 'Lato', sans-serif;
 }
 nav{
-    display: inline-block;
+    background-color: #f04510;
+    display: inline;
     position: fixed;
+    z-index: 9999;
+    width: 100%;
+    box-shadow: 0 3px 10px #000c;
 }
-#navbar {
-    /*position: fixed; */
 
-    width: auto;
-    padding-left: 0px;
-}
-#logo {
-    padding: 20px;
-    border-radius: 30px;
-}
+
 
 #logo img {
-    height: 68px;
-    width: 68px;
+    height: 50px;
     padding-left: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -129,25 +124,37 @@ nav{
 }
 nav li {
     display: inline;
-    background-color: red;
-    border-radius: 20px;
     margin: 15px;
     padding: 20px;
-    width: auto;
 
 }
 #navbar .nav-link {
     cursor: default;
     font-size: 20px;
+    text-transform: uppercase;
     text-decoration: none;
     color: white;
-
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px #5f5e5e;
+    transition: text-shadow 1s;
+}
+#navbar .nav-link:hover {
+    cursor: default;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px #000000;
+    transition: text-shadow 1s;
 
 }
 
 section{
     margin: 0;
-    padding: 30px;
+    padding: 80px;
     box-shadow: 0 3px 10px #000c;
 }
 
@@ -180,19 +187,51 @@ h5.title{
     height: 800px;
 }
 
+#header h1{
+    margin-top: 150px;
+    margin-left: 50px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 12px;
+    font-size: 4em;
+    color: #fff;
+    text-shadow: 3px 3px 10px #000;
+}
+
+#header p{
+    max-width: 760px;
+    margin-left: 20px;
+    padding: 15px 25px;
+    background: #06060659;
+    border-radius: 43px;
+    font-size: 1.5em;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+    margin-bottom: 68px;
+}
 
 a.header-button{
-    border: 7px solid #ffff;
+    border: 7px solid #e0785c;
     padding: 25px 60px;
     font-size: 2em;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 900;
-    color: #fff;
+    color: #e3613f;
     text-decoration: none;
     text-shadow: 1px 1px 3px #ccc;
     box-shadow: 1px 1px 3px #ccc;
-    background: #0808084d;
+    background: #ffffff54;
+    margin-left: 127px;
+    transition: background-color 0.2s linear, border-color 0.2s linear;
+}
+
+a.header-button:hover{
+    background: #e46140;
+    color: #ffff;
+    border-color: #e46140;
+    text-shadow: 1px 1px 3px #464141;
+    transition: background-color 0.2s linear, border-color 0.2s linear;
 }
 
 /*sekcja usability */
