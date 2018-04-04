@@ -109,6 +109,8 @@ nav{
     width: 100%;
     height: auto;
     box-shadow: 0 3px 10px #000c;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 nav ul{
     clear: both;
@@ -171,7 +173,25 @@ nav li {
 #logo {
     float: left;
 }
+@media screen and (max-width: 1000px){
+    #logo{order: 1;}
+    nav ul{
 
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    nav li{
+        display: block;
+        padding: 0px;
+    }
+
+    #logo, .right-side{
+        float: left;
+    }
+
+}
 section{
     margin: 0;
     padding: 80px;
