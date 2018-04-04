@@ -679,7 +679,7 @@ footer p{
 /*features*/
 .features-li {
     width: 24%;
-    height: 200px;
+    height: auto;
     text-align: center;
     display: block;
 }
