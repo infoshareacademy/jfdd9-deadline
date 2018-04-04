@@ -158,7 +158,7 @@ section{
     box-shadow: 0 3px 10px #000c;
 }
 
-h3.title{
+h5.title{
     font-weight: 700;
     margin: 5px 0;
     text-align: center;
@@ -691,11 +691,17 @@ footer p{
     flex-wrap: wrap;
 }
 
-.features-local {
-
-}
 
 .features-li img {
     width: 129px;
     height: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
+
+ h3.title {
+     font-weight: 700;
+     margin: 5px 0;
+     text-align: center;
+     font-size: 1.2em;
+ }
