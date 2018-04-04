@@ -156,7 +156,7 @@ section{
     margin: 0;
     padding: 80px;
     box-shadow: 0 3px 10px #000c;
-    width: 100vw;
+    /*width: 100vw;*/
 }
 
 @media (max-width: 900px){
@@ -193,9 +193,9 @@ h5.title{
     background-image: url("../img/hero-background.jpg");
     background-size: cover;
     background-position: center;
-    max-height: 100vh;
-    height: 100vh;
+    max-width: 100vw;
     padding-top: 150px;
+    height: 100vh;
 }
 
 #header h1{
@@ -263,7 +263,14 @@ a.header-button:hover{
     }
 
     a{
-        max-wi
+
+    }
+}
+
+
+@media (max-width: 900px){
+    #header a{
+        margin: 35px auto 0;
     }
 }
 
@@ -412,7 +419,7 @@ a.header-button:hover{
     display: flex;
     background-size: cover;
     background-position: center;
-    padding: 201px 80px;
+    /*padding: 201px 80px;*/
 }
 
 .subscribe{
@@ -420,9 +427,10 @@ a.header-button:hover{
     padding: 32px;
     border: 1px solid #ccc;
     border-radius: 40px;
-    margin: 0 20px;
     box-shadow: 2px 2px 10px #ccc;
     background: #fafafafa;
+    max-width: 800px;
+    margin: 50px auto;
 }
 
 form.subscribe-form {
@@ -509,6 +517,7 @@ footer{
     color: #fefefefe;
     background: #3a3a3a;
     text-align: right;
+
 }
 
 footer p{
