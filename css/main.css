@@ -131,13 +131,16 @@ nav ul{
     cursor: default;
 
 }
+figure{
+    padding: 0px;
+    margin: 0px;
+
+}
 nav li {
 
     display: inline;
     margin: 5px 15px;
     padding: 10px;
-
-
 
 }
 #navbar .nav-link {
@@ -169,12 +172,18 @@ nav li {
     position: relative;
     display: inline-block;
     float: right;
+    transition: display 5s;
 }
 #logo {
     float: left;
 }
+.hamburger{
+    display: none;
+}
 @media screen and (max-width: 1000px){
-    #logo{order: 1;}
+    #logo{
+        order: 1;
+    }
     nav ul{
 
         display: flex;
@@ -182,14 +191,44 @@ nav li {
         flex-wrap: wrap;
         align-items: center;
     }
-    nav li{
+    .left side{
         display: block;
         padding: 0px;
+
     }
 
-    #logo, .right-side{
-        float: left;
+    .right-side{
+        transition: 50ms;
+        visibility: hidden;
+        height: 0px;
+        padding: 0px;
+        margin: 0px;
+
     }
+
+    ul:active > .right-side {
+        height: 2.75rem;
+        display: flex;
+        transition: 0.2s;
+        visibility: visible;
+        padding: 0px;
+
+    }
+    .hamburger{
+        display: flex;
+        padding: 0px;
+        margin: 0px;
+        order: -99;
+    }
+    ul li figure{
+        padding: 0px;
+        margin: 0px;
+    }
+    .hamburger img{
+        height: 40px;
+    }
+
+
 
 }
 section{

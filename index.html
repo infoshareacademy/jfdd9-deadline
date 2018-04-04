@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
           integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -28,18 +29,20 @@
 
 <nav>
 
-    <ul id="navbar">
-        <li id="logo"> <!--class="right-side"-->
+    <ul id="navbar" class="left-side">
+        <li id="logo" class="left-side">
             <a href="#top">
-                <img src="img/logo-white.png" alt="CatComposer" >
-                <!--TODO add credits for icon author https://www.flaticon.com/free-icon/cat-whiskers_24674#term=cat&page=1&position=71-->
+                <figure aria-label="Logo Cat Compozer. Na obrazku kocie wąsy.">
+                    <img src="img/logo-white.png" alt="CatComposer" >
+                    <!--TODO add credits for icon author https://www.flaticon.com/free-icon/cat-whiskers_24674#term=cat&page=1&position=71-->
+                </figure>
             </a>
         </li>
         <li class="right-side"><a href="#subscribe" class="nav-link">Newsletter</a></li>
         <li class="right-side"><a href="#team" class="nav-link">Nasz zespół</a></li>
         <li class="right-side"><a href="#usability" class="nav-link">Funkcjonalności</a></li>
         <li class="right-side"><a href="#features" class="nav-link">Cechy</a></li>
-
+        <li id="hamburger" class="hamburger"><figure><img src="img/hamburger.png" </figure></li>
 
     </ul>
 </nav>
@@ -214,6 +217,7 @@
 
 
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/main.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
