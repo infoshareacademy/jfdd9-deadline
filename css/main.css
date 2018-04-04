@@ -691,11 +691,9 @@ footer p{
     flex-wrap: wrap;
 }
 
-.features-local {
-
-}
 
 .features-li img {
     width: 129px;
     height: auto;
+    margin-bottom: 20px;
 }
