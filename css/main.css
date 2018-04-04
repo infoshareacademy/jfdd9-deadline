@@ -678,7 +678,7 @@ footer p{
 
 /*features*/
 .features-li {
-    width: 24%;
+    width: auto;
     height: auto;
     text-align: center;
     display: block;
@@ -688,8 +688,14 @@ footer p{
     display: flex;
     justify-content: space-around;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 .features-local {
 
+}
+
+.features-li img {
+    width: 129px;
+    height: auto;
 }
