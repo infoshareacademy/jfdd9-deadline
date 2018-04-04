@@ -158,7 +158,7 @@ section{
     box-shadow: 0 3px 10px #000c;
 }
 
-h5.title{
+h3.title{
     font-weight: 700;
     margin: 5px 0;
     text-align: center;
@@ -674,4 +674,28 @@ footer p{
     h3 {
         page-break-after: avoid;
     }
+}
+
+/*features*/
+.features-li {
+    width: auto;
+    height: auto;
+    text-align: center;
+    display: block;
+}
+
+.features-flex {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.features-local {
+
+}
+
+.features-li img {
+    width: 129px;
+    height: auto;
 }
