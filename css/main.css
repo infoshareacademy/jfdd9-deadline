@@ -356,8 +356,8 @@ input.subscribe-input {
     font-weight: 700;
     letter-spacing: 1px;
     text-align: center;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 5px #ccc;
+    border: 1px solid #e46140;
+    box-shadow: 1px 1px 5px #e0785c;
 }
 input.subscribe-input:focus{
     outline: none;
@@ -369,15 +369,15 @@ button.subscribe-submit{
     top: 0px;
     right: -41px;
     padding: 6px 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #e46140;
     border-radius: 0 26px 26px 0;
     font-size: 1.3em;
-    /*transition: to do;*/
+    background: #e46140;
 }
 button.subscribe-submit i{
     padding: 0 20px;
     font-weight: bold;
-    color: #e46140;
+    color: #fefefe;
     font-size: 2em;
 }
 button.subscribe-submit:focus{
