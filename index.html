@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="pl">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
           integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -24,20 +25,25 @@
     your browser</a> to improve your experience and security.</p>
 <![endif]-->
 
-        <!-- Add your site or application content here -->
+<!-- Add your site or application content here -->
 
 <nav>
 
-    <ul id="navbar">
-            <li id="logo">
-                <a href="#top" class="nav-link">
-                        <img src="img/logo-white.png" alt="CatComposer" >
-                        <!--TODO add credits for icon author https://www.flaticon.com/free-icon/cat-whiskers_24674#term=cat&page=1&position=71-->
-                </a>
-            </li>
-            <li><a href="#usability" class="nav-link">Funkcjonalności</a></li>
-            <li><a href="#team" class="nav-link">Drużyna</a></li>
-            <li><a href="#subscribe" class="nav-link">Newsletter</a></li>
+    <ul id="navbar" class="left-side">
+        <li id="logo" class="left-side">
+            <a href="#top">
+                <figure aria-label="Logo Cat Compozer. Na obrazku kocie wąsy.">
+                    <img src="img/logo-white.png" alt="CatComposer" >
+                    <!--TODO add credits for icon author https://www.flaticon.com/free-icon/cat-whiskers_24674#term=cat&page=1&position=71-->
+                </figure>
+            </a>
+        </li>
+        <li class="right-side"><a href="#subscribe" class="nav-link">Newsletter</a></li>
+        <li class="right-side"><a href="#team" class="nav-link">Nasz zespół</a></li>
+        <li class="right-side"><a href="#usability" class="nav-link">Funkcjonalności</a></li>
+        <li class="right-side"><a href="#features" class="nav-link">Cechy</a></li>
+        <li id="hamburger" class="hamburger"><figure><img src="img/hamburger.png" </figure></li>
+
     </ul>
 </nav>
 <header>
@@ -47,28 +53,53 @@
     <a class="header-button" href="#subscribe">Dołącz do nas!</a>
 </section>
 </header>
+
+<!--featuresy w poziomie 4 z ikonami-->
+
+<section id="features">
+    <ul class="features-flex">
+        <li class="features-li features-local">
+            <img src="img/local-map.png" alt="ikona lokalizacji">
+            <h3 class="title">Określenie lokalizacji</h3>
+        </li>
+        <li class="features-li features-charac">
+            <img src="img/charac-flask.png" alt="ikona wyboru chatakteru">
+            <h3 class="title">Wybór charakteru kota</h3>
+        </li>
+        <li class="features-li features-rent">
+            <img src="img/rent-kalendarz.png" alt="ikona wypożyczenia">
+            <h3 class="title">Wybór czasu wypożyczenia</h3>
+        </li>
+        <li class="features-li features-adoption">
+            <img src="img/adoption-smartphone.png" alt="ikona kontaktu ze schroniskiem">
+            <h3 class="title">Kontakt ze schroniskiem</h3>
+        </li>
+    </ul>
+</section>
+
+
 <!--funkcjonalności w dwóch kolumnach -->
 <section id="usability">
     <h2 class="section-title">Cat Composer</h2>
     <ul class="left usability-ul">
         <li class="usability-li">
             <div class="usability-image usability-bezpiecz"></div>
-            <h5 class="title">Bezpieczeństwo</h5>
+            <h3 class="title">Bezpieczeństwo</h3>
             <p class="usability-descr">CatComposer posiada najnowsze systemy zabezpieczania danych. Nasi klienci bez obaw mogą zamówić swojego kota. Dane osobowe, teleadresowe oraz bankowe są szyfrowane.</p>
         </li>
         <li class="usability-li">
             <div class="usability-image usability-zgod"></div>
-            <h5 class="title">Zgodność</h5>
+            <h3 class="title">Zgodność</h3>
             <p class="usability-descr">CatComposer działa na najpopularniejszych przeglądarkach desktopowych oraz mobilnych.</p>
         </li>
         <li class="usability-li">
             <div class="usability-image usability-respon"></div>
-            <h5 class="title">Responsywność</h5>
+            <h3 class="title">Responsywność</h3>
             <p class="usability-descr">Zgodnie z myślą o stale rozwijającym się rynku urządzeń mobilnych, CatComposer jest responsywny. Poszukiwać kota można bez problemu zarówno z komputera jak i smarfona i tabletu.</p>
         </li>
         <li class="usability-li">
             <div class="usability-image usability-wspol"></div>
-            <h5 class="title">Współdziałanie</h5>
+            <h3 class="title">Współdziałanie</h3>
             <p class="usability-descr">CatComposer jest aplikacją zoptymalizowaną, dzięki czemu nie obciąża niepotrzebnie procesora i dogodnie działa w tle.</p>
         </li>
     </ul>
@@ -78,22 +109,22 @@
     <ul class="right usability-ul">
         <li class="usability-li">
             <div class="usability-image usability-intui"></div>
-            <h5 class="title">Intuicyjność</h5>
+            <h3 class="title">Intuicyjność</h3>
             <p class="usability-descr">Menu CatComposera jest intuicyjne, dzięki czemu nasi Klienci w lot pojmą jego funkcjonowanie, nawet jesli wcześniej nie mieli styczności z tego typu aplikacjami.</p>
         </li>
         <li class="usability-li">
             <div class="usability-image usability-efekt"></div>
-            <h5 class="title">Efektywność</h5>
+            <h3 class="title">Efektywność</h3>
             <p class="usability-descr">Wystarczy kilka kliknięć, by poprzez CatComposera odnaleźć kota dla siebie. Nie traci się czasu na długie i nudne przeszukiwanie ofert, które nas nie interesują.</p>
         </li>
         <li class="usability-li">
             <div class="usability-image usability-satys"></div>
-            <h5 class="title">Satysfakcja</h5>
+            <h3 class="title">Satysfakcja</h3>
             <p class="usability-descr">Szybki efekt wyszukiwania umożliwia uniknięcie frustrowania się podczas poszukiwania swojego wymarzonego kota. Przejrzyste warunki działania zapewniają każdorazowo sukces.</p>
         </li>
         <li class="usability-li">
             <div class="usability-image usability-powt"></div>
-            <h5 class="title">Powtarzalność</h5>
+            <h3 class="title">Powtarzalność</h3>
             <p class="usability-descr">CatComposer kumuluje w sobie dane, które wcześniej były wyszukaniami naszych Klientów i przyśpiesza powrót do interesujących nas wyszukań.</p>
         </li>
     </ul>
@@ -209,6 +240,7 @@
 
 
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/main.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
@@ -226,6 +258,5 @@
     ga('send', 'pageview')
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-
 </body>
 </html>

@@ -100,19 +100,27 @@ textarea {
 body{
     font-family: 'Lato', sans-serif;
 }
+/* ustawienia stylu navbara i elementów*/
 nav{
     background-color: #f04510;
-    display: inline;
+    display: block;
     position: fixed;
     z-index: 9999;
     width: 100%;
+    height: auto;
     box-shadow: 0 3px 10px #000c;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+nav ul{
+    clear: both;
+    margin: 0px;
 }
 
 
-
 #logo img {
-    height: 50px;
+    height: 25px;
+    width: 100px;
     padding-left: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -120,15 +128,23 @@ nav{
     margin-right: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
+    cursor: default;
+
+}
+figure{
+    padding: 0px;
+    margin: 0px;
 
 }
 nav li {
+
     display: inline;
-    margin: 15px;
-    padding: 20px;
+    margin: 5px 15px;
+    padding: 10px;
 
 }
 #navbar .nav-link {
+
     cursor: default;
     font-size: 20px;
     text-transform: uppercase;
@@ -137,7 +153,8 @@ nav li {
     font-weight: 700;
     letter-spacing: 1px;
     text-shadow: 1px 1px 3px #5f5e5e;
-    transition: text-shadow 1s;
+    transition: text-shadow 0.2s;
+
 }
 #navbar .nav-link:hover {
     cursor: default;
@@ -147,11 +164,73 @@ nav li {
     color: white;
     font-weight: 700;
     letter-spacing: 1px;
-    text-shadow: 1px 1px 3px #000000;
-    transition: text-shadow 1s;
+    text-shadow: 0px 3px 5px #771d04;
+    transition: text-shadow 0.2s;
 
 }
+.right-side{
+    position: relative;
+    display: inline-block;
+    float: right;
+    transition: display 5s;
+}
+#logo {
+    float: left;
+}
+.hamburger{
+    display: none;
+}
+@media screen and (max-width: 1000px){
+    #logo{
+        order: 1;
+    }
+    nav ul{
 
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .left side{
+        display: block;
+        padding: 0px;
+
+    }
+
+    .right-side{
+        transition: 50ms;
+        visibility: hidden;
+        height: 0px;
+        padding: 0px;
+        margin: 0px;
+
+    }
+
+    ul:active > .right-side {
+        height: 2.75rem;
+        display: flex;
+        transition: 0.2s;
+        visibility: visible;
+        padding: 0px;
+
+    }
+    .hamburger{
+        display: flex;
+        padding: 0px;
+        margin: 0px;
+        order: -99;
+    }
+    ul li figure{
+        padding: 0px;
+        margin: 0px;
+    }
+    .hamburger img{
+        height: 40px;
+    }
+
+
+
+}
 section{
     margin: 0;
     padding: 80px;
@@ -733,3 +812,37 @@ footer p{
         page-break-after: avoid;
     }
 }
+
+/*features*/
+.features-li {
+    width: auto;
+    height: auto;
+    text-align: center;
+    display: block;
+}
+
+.features-flex {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.features-local {
+
+}
+
+.features-li img {
+    width: 129px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+ h3.title {
+     font-weight: 700;
+     margin: 5px 0;
+     text-align: center;
+     font-size: 1.2em;
+     margin: 15px;
+ }
