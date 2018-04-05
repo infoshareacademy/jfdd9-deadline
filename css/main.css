@@ -326,7 +326,7 @@ a.header-button:hover{
 
 .right {
     float: right;
-    margin-right: 50px;
+    /*margin-right: 50px;*/
 }
 /*
 .left {
@@ -347,6 +347,7 @@ a.header-button:hover{
     width: 40%;
     list-style-type: none;
     margin-top:50px;
+    padding: 0;
 }
 
 .clear {
