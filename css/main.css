@@ -109,8 +109,7 @@ nav{
     width: 100%;
     height: auto;
     box-shadow: 0 3px 10px #000c;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+
 }
 nav ul{
     clear: both;
