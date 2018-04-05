@@ -770,6 +770,9 @@ footer p{
     flex-wrap: wrap;
 }
 
+.features-local {
+
+}
 
 .features-li img {
     width: 129px;
@@ -783,4 +786,5 @@ footer p{
      margin: 5px 0;
      text-align: center;
      font-size: 1.2em;
+     margin: 15px;
  }
