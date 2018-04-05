@@ -228,8 +228,6 @@ nav li {
         height: 40px;
     }
 
-
-
 }
 section{
     margin: 0;
@@ -414,6 +412,18 @@ a.header-button:hover{
     background-position-y: 320px;
 
 }
+
+@media (max-width: 1150px) {
+    .usability-ul {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .right.usability-ul {
+        margin-top: 0;
+        float:none;
+    }
+}
+
 
 
 
