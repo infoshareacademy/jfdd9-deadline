@@ -109,8 +109,7 @@ nav{
     width: 100%;
     height: auto;
     box-shadow: 0 3px 10px #000c;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+
 }
 nav ul{
     clear: both;
@@ -180,12 +179,16 @@ nav li {
 .hamburger{
     display: none;
 }
+/*button do chowania menu*/
+input[type=checkbox]{
+    display: none;
+}
 @media screen and (max-width: 1000px){
     #logo{
         order: 1;
     }
     nav ul{
-
+        padding: 0;
         display: flex;
         flex-direction: column-reverse;
         flex-wrap: wrap;
@@ -205,6 +208,15 @@ nav li {
         margin: 0px;
 
     }
+    /*Show menu when invisible checkbox is checked*/
+    input[type=checkbox]:checked ~ .right-side{
+        height: 2.75rem;
+        display: flex;
+        transition: 0.2s;
+        visibility: visible;
+        padding: 0px;
+    }
+    /*
 
     ul:active > .right-side {
         height: 2.75rem;
@@ -213,13 +225,15 @@ nav li {
         visibility: visible;
         padding: 0px;
 
-    }
+    }*/
     .hamburger{
         display: flex;
         padding: 0px;
         margin: 0px;
         order: -99;
     }
+
+
     ul li figure{
         padding: 0px;
         margin: 0px;
@@ -228,13 +242,18 @@ nav li {
         height: 40px;
     }
 
-
-
 }
 section{
     margin: 0;
     padding: 80px;
     box-shadow: 0 3px 10px #000c;
+    /*width: 100vw;*/
+}
+
+@media (max-width: 900px){
+    section {
+        padding: 10px;
+    }
 }
 
 h5.title{
@@ -256,6 +275,12 @@ h5.title{
     color: #383838;
 }
 
+@media (max-width: 480px){
+    .section-title{
+        display: none;
+    }
+}
+
 
 /* ---------------------------------------------------------------------
     sekcja #header
@@ -265,11 +290,12 @@ h5.title{
     background-image: url("../img/hero-background.jpg");
     background-size: cover;
     background-position: center;
-    height: 800px;
+    max-width: 100vw;
+    padding-top: 150px;
+    height: 100vh;
 }
 
 #header h1{
-    margin-top: 150px;
     margin-left: 50px;
     text-transform: uppercase;
     font-weight: 900;
@@ -292,6 +318,8 @@ h5.title{
 }
 
 a.header-button{
+    display: block;
+    max-width: 300px;
     border: 7px solid #e0785c;
     padding: 25px 60px;
     font-size: 2em;
@@ -315,6 +343,35 @@ a.header-button:hover{
     box-shadow: 1px 1px 40px 2px #1f1f1fcc;
     transition: background-color 0.2s linear, border-color 0.2s linear, color 0.2s linear, box-shadow 0.5s linear;
 }
+
+@media (max-width: 852px) {
+
+    #header{
+        padding: 10px;
+        padding-top: 120px;
+    }
+    #header h1{
+        font-size: 3em;
+    }
+
+    #header p{
+        font-size: 1.2em;
+        margin: 0;
+    }
+
+    a{
+
+    }
+}
+
+
+@media (max-width: 900px){
+    #header a{
+        margin: 35px auto 0;
+    }
+}
+
+
 
 /*sekcja usability */
 .usability {
@@ -416,6 +473,18 @@ a.header-button:hover{
 
 }
 
+@media (max-width: 1150px) {
+    .usability-ul {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .right.usability-ul {
+        margin-top: 0;
+        float:none;
+    }
+}
+
+
 
 
 
@@ -460,7 +529,7 @@ a.header-button:hover{
     display: flex;
     background-size: cover;
     background-position: center;
-    padding: 201px 80px;
+    /*padding: 201px 80px;*/
 }
 
 .subscribe{
@@ -468,9 +537,10 @@ a.header-button:hover{
     padding: 32px;
     border: 1px solid #ccc;
     border-radius: 40px;
-    margin: 0 20px;
     box-shadow: 2px 2px 10px #ccc;
     background: #fafafafa;
+    max-width: 800px;
+    margin: 50px auto;
 }
 
 form.subscribe-form {
@@ -519,7 +589,7 @@ button.subscribe-submit:focus{
     outline: none;
 }
 button.subscribe-submit:hover{
-    background: #aaa;
+    background: #ef4730;
 }
 
 .subscribe-label{
@@ -546,35 +616,56 @@ button.subscribe-submit:hover{
 .subscribe-label > div p{
     margin: 0;
 }
+@media (max-width: 610px){
+    .subscribe-label i{
+        font-size: 4em;
+        margin: 0;
+    }
+}
+
+@media (max-width: 400px){
+    .subscribe-label i{
+        display: none;
+    }
+    .subscribe-label div{
+        margin: 0;
+    }
+
+    .subscribe button{
+        position: static;
+        font-size: 0.9em;
+        background: #e46140;
+        border-radius: 27px;
+        margin: 10px auto 0;
+    }
+
+    .subscribe form{
+        min-width: 100%;
+    }
+
+    .subscribe input{
+        padding: 5px 3px;
+        width: 95%;
+        font-size: 1.1em;
+    }
+}
+
+/* ---------------------------------------------------------------------
+    sekcja #footer
+*/
 
 footer{
     padding: 5px 20px;
     color: #fefefefe;
     background: #3a3a3a;
     text-align: right;
+
 }
 
 footer p{
     padding: 0;
     margin: 0;
 }
-
-
-
-/* ---------------------------------------------------------------------
-    sekcja #footer
-*/
-
-
-
-
-
-
-
-
-
-
-
 
 
 
