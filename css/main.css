@@ -180,12 +180,16 @@ nav li {
 .hamburger{
     display: none;
 }
+/*button do chowania menu*/
+input[type=checkbox]{
+    display: none;
+}
 @media screen and (max-width: 1000px){
     #logo{
         order: 1;
     }
     nav ul{
-
+        padding: 0;
         display: flex;
         flex-direction: column-reverse;
         flex-wrap: wrap;
@@ -205,6 +209,15 @@ nav li {
         margin: 0px;
 
     }
+    /*Show menu when invisible checkbox is checked*/
+    input[type=checkbox]:checked ~ .right-side{
+        height: 2.75rem;
+        display: flex;
+        transition: 0.2s;
+        visibility: visible;
+        padding: 0px;
+    }
+    /*
 
     ul:active > .right-side {
         height: 2.75rem;
@@ -213,13 +226,15 @@ nav li {
         visibility: visible;
         padding: 0px;
 
-    }
+    }*/
     .hamburger{
         display: flex;
         padding: 0px;
         margin: 0px;
         order: -99;
     }
+
+
     ul li figure{
         padding: 0px;
         margin: 0px;
