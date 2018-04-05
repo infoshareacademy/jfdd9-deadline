@@ -261,6 +261,12 @@ h5.title{
     color: #383838;
 }
 
+@media (max-width: 480px){
+    .section-title{
+        display: none;
+    }
+}
+
 
 /* ---------------------------------------------------------------------
     sekcja #header
