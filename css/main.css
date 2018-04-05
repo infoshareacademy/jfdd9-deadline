@@ -479,7 +479,7 @@ button.subscribe-submit:focus{
     outline: none;
 }
 button.subscribe-submit:hover{
-    background: #aaa;
+    background: #ef4730;
 }
 
 .subscribe-label{
@@ -506,7 +506,36 @@ button.subscribe-submit:hover{
 .subscribe-label > div p{
     margin: 0;
 }
+@media (max-width: 610px){
 
+}
+
+@media (max-width: 400px){
+    .subscribe-label i{
+        display: none;
+    }
+    .subscribe-label div{
+        margin: 0;
+    }
+
+    .subscribe button{
+        position: static;
+        font-size: 0.9em;
+        background: #e46140;
+        border-radius: 27px;
+        margin: 10px auto 0;
+    }
+
+    .subscribe form{
+        min-width: 100%;
+    }
+
+    .subscribe input{
+        padding: 5px 3px;
+        width: 95%;
+        font-size: 1.1em;
+    }
+}
 
 /* ---------------------------------------------------------------------
     sekcja #footer
