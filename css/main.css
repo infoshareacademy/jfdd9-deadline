@@ -865,9 +865,16 @@ footer p{
     justify-content: space-around;
     list-style: none;
     flex-wrap: wrap;
+
+}
+section#features {
+    background-color: #e46140;
 }
 
-.features-local {
+#features .title {
+    margin:0 15px;
+    font-size:1.3rem;
+    color:#fff;
 
 }
 
@@ -876,6 +883,7 @@ footer p{
     height: auto;
     margin-bottom: 20px;
     margin-top: 20px;
+
 }
 
  h3.title {
@@ -883,5 +891,12 @@ footer p{
      margin: 5px 0;
      text-align: center;
      font-size: 1.2em;
-     margin: 15px;
+ }
+
+ .features-icon {
+     font-size: 8.5rem;
+     color: #ffffff;
+     margin-bottom: 2rem;
+     margin-top: 2rem;
+
  }
