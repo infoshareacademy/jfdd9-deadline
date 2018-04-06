@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
           integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 
@@ -28,7 +29,6 @@
 <!-- Add your site or application content here -->
 
 <nav>
-
     <ul id="navbar" class="left-side">
         <li id="logo" class="left-side">
             <a href="#top">
@@ -53,12 +53,13 @@
 
     </ul>
 </nav>
-<header>
-<section id="header">
-    <h1>Cat Composer</h1>
-    <p>Cat Composer jest narzędziem pomagającym w adopcji kotów. Dzięki kilu kliknięciom odnajdziesz wymarzonego kota. Udostępniamy również możliwość wypożyczenia zwierzaka na dowolny okres czasu.</p>
-    <a class="header-button" href="#subscribe">Dołącz do nas!</a>
-</section>
+
+<header class="hero">
+    <div class="hero-content">
+        <h1 class="animated fadeInLeft">Cat Composer</h1>
+        <p>Cat Composer jest innowacyjnym narzędziem wspomagającym proces adopcji kotów. Dzięki kilku kliknięć odnajdziesz kociaka, który czeka właśnie na Ciebie! Gwarantujemy Ci idealne dopasowanie Twojego charakteru z charakterem zwierzaka, dzięki czemu jeszcze bardziej go pokochasz <span>&hearts;</span></p>
+        <a href="#subscribe" class="header-button">Dołącz do nas</a>
+    </div>
 </header>
 
 <!--featuresy w poziomie 4 z ikonami-->
@@ -144,9 +145,9 @@
     <div id="team-contener">
         <div class="team-item">
             <div class="team-img">
-                <img src="img/team3.png"/>
+                <img src="img/team1.png" alt="team person"/>
             </div>
-            <h5 class="title">Ewa Klebba</h5>
+            <h3 class="title">Ewa Klebba</h3>
             <table>
                 <tr>
                     <td><i class="fab fa-facebook-square"></i></td>
@@ -160,9 +161,9 @@
         </div>
         <div class="team-item">
             <div class="team-img">
-                <img src="img/team1.png"/>
+                <img src="img/team3.png" alt="team person" />
             </div>
-            <h5 class="title">Jacek Herbut</h5>
+            <h3 class="title">Jacek Herbut</h3>
             <table>
                 <tr>
                     <td><i class="fab fa-facebook-square"></i></td>
@@ -176,9 +177,9 @@
         </div>
         <div class="team-item">
             <div class="team-img">
-                <img src="img/team2.png"/>
+                <img src="img/team2.png" alt="team person" />
             </div>
-            <h5 class="title">Gerard Szulc</h5>
+            <h3 class="title">Gerard Szulc</h3>
             <table>
                 <tr>
                     <td><i class="fab fa-facebook-square"></i></td>
@@ -192,9 +193,9 @@
         </div>
         <div class="team-item">
             <div class="team-img">
-                <img src="img/team3.png"/>
+                <img src="img/team4.png" alt="team person" />
             </div>
-            <h5 class="title">Marta Wieczorek</h5>
+            <h3 class="title">Marta Wieczorek</h3>
             <table>
                 <tr>
                     <td><i class="fab fa-facebook-square"></i></td>
@@ -208,9 +209,9 @@
         </div>
         <div class="team-item">
             <div class="team-img">
-                <img src="img/team4.png"/>
+                <img src="img/team2.png" alt="team person" />
             </div>
-            <h5 class="title">Michał Maniara</h5>
+            <h3 class="title">Michał Maniara</h3>
             <table>
                 <tr>
                     <td><i class="fab fa-facebook-square"></i></td>
@@ -234,7 +235,7 @@
                 <p>Zostaw swój adres e-mail aby dowiedziec się więcej</p>
             </div>
         </div>
-        <form action="index.html" method="post" class="subscribe-form">
+        <form action="index.html" method="post" class="subscribe-form" aria-label="Twój adres E-mail">
             <input type="email" name="email" class="subscribe-input" placeholder="Email address">
             <button type="submit" class="subscribe-submit"><i class="fas fa-chevron-right"></i></button>
         </form>
