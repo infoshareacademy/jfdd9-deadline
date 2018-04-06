@@ -100,19 +100,26 @@ textarea {
 body{
     font-family: 'Lato', sans-serif;
 }
+/* ustawienia stylu navbara i elementów*/
 nav{
     background-color: #f04510;
-    display: inline;
+    display: block;
     position: fixed;
     z-index: 9999;
     width: 100%;
+    height: auto;
     box-shadow: 0 3px 10px #000c;
+
+}
+nav ul{
+    clear: both;
+    margin: 0px;
 }
 
 
-
 #logo img {
-    height: 50px;
+    height: 25px;
+    width: 100px;
     padding-left: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -120,15 +127,23 @@ nav{
     margin-right: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
+    cursor: default;
+
+}
+figure{
+    padding: 0px;
+    margin: 0px;
 
 }
 nav li {
+
     display: inline;
-    margin: 15px;
-    padding: 20px;
+    margin: 5px 15px;
+    padding: 10px;
 
 }
 #navbar .nav-link {
+
     cursor: default;
     font-size: 20px;
     text-transform: uppercase;
@@ -137,7 +152,8 @@ nav li {
     font-weight: 700;
     letter-spacing: 1px;
     text-shadow: 1px 1px 3px #5f5e5e;
-    transition: text-shadow 1s;
+    transition: text-shadow 0.2s;
+
 }
 #navbar .nav-link:hover {
     cursor: default;
@@ -147,15 +163,97 @@ nav li {
     color: white;
     font-weight: 700;
     letter-spacing: 1px;
-    text-shadow: 1px 1px 3px #000000;
-    transition: text-shadow 1s;
+    text-shadow: 0px 3px 5px #771d04;
+    transition: text-shadow 0.2s;
 
 }
+.right-side{
+    position: relative;
+    display: inline-block;
+    float: right;
+    transition: display 5s;
+}
+#logo {
+    float: left;
+}
+.hamburger{
+    display: none;
+}
+/*button do chowania menu*/
+input[type=checkbox]{
+    display: none;
+}
+@media screen and (max-width: 1000px){
+    #logo{
+        order: 1;
+    }
+    nav ul{
+        padding: 0;
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .left side{
+        display: block;
+        padding: 0px;
 
+    }
+
+    .right-side{
+        transition: 50ms;
+        visibility: hidden;
+        height: 0px;
+        padding: 0px;
+        margin: 0px;
+
+    }
+    /*Show menu when invisible checkbox is checked*/
+    input[type=checkbox]:checked ~ .right-side{
+        height: 2.75rem;
+        display: flex;
+        transition: 0.2s;
+        visibility: visible;
+        padding: 0px;
+    }
+    /*
+
+    ul:active > .right-side {
+        height: 2.75rem;
+        display: flex;
+        transition: 0.2s;
+        visibility: visible;
+        padding: 0px;
+
+    }*/
+    .hamburger{
+        display: flex;
+        padding: 0px;
+        margin: 0px;
+        order: -99;
+    }
+
+
+    ul li figure{
+        padding: 0px;
+        margin: 0px;
+    }
+    .hamburger img{
+        height: 40px;
+    }
+
+}
 section{
     margin: 0;
     padding: 80px;
     box-shadow: 0 3px 10px #000c;
+    /*width: 100vw;*/
+}
+
+@media (max-width: 900px){
+    section {
+        padding: 10px;
+    }
 }
 
 h5.title{
@@ -177,54 +275,75 @@ h5.title{
     color: #383838;
 }
 
+@media (max-width: 480px){
+    .section-title{
+        display: none;
+    }
+}
+
 
 /* ---------------------------------------------------------------------
     sekcja #header
 */
 
-#header {
-    background-image: url("../img/hero-background.jpg");
+.hero{
+    height: 100vh;
+    width: 100%;
+    background: url(../img/hero-background.jpg) no-repeat fixed center;
     background-size: cover;
-    background-position: center;
-    height: 800px;
 }
 
-#header h1{
-    margin-top: 150px;
-    margin-left: 50px;
-    text-transform: uppercase;
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    padding: 120px 30px 0;
+}
+.hero-content h1{
+    margin: 0 auto;
+    padding: 5px 10px;
+    font-size: 3em;
+    color: #fff;
     font-weight: 900;
-    letter-spacing: 12px;
-    font-size: 4em;
-    color: #fff;
-    text-shadow: 3px 3px 10px #000;
+    letter-spacing: 6px;
+    text-shadow: 2px 2px 11px #000;
+    text-transform: uppercase;
+    background: #84756a4f;
+    width: fit-content;
 }
 
-#header p{
-    max-width: 760px;
-    margin-left: 20px;
-    padding: 15px 25px;
-    background: #06060659;
-    border-radius: 43px;
-    font-size: 1.5em;
-    color: #fff;
-    text-shadow: 1px 1px 3px #000;
-    margin-bottom: 68px;
+.hero-content p{
+    margin-top: 30px;
+    background: #84756a4f;
+    width: fit-content;
+    padding: 5px 10px;
+    text-align: justify;
+    font-size: 1.1em;
 }
 
-a.header-button{
+.hero-content p span {
+    color: #f04838;
+    font-size: 2.2em;
+    position: absolute;
+    transform: rotate(17deg);
+}
+
+a.header-button {
+    display: block;
+    width: fit-content;
     border: 7px solid #e0785c;
-    padding: 25px 60px;
+    padding: 14px 24px;
     font-size: 2em;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    word-spacing: 15px;
     font-weight: 900;
     color: #e3613f;
     text-decoration: none;
-    text-shadow: 1px 1px 3px #ccc;
-    box-shadow: 2px 3px 10px #5d5b5b;
-    background: #ffffff54;
-    margin-left: 127px;
+    text-shadow: 1px 1px 3px #2f2f2f;
+    box-shadow: 2px 3px 10px #3a3333;
+    background: #ffffff66;
+    margin: 0 auto;
     transition: background-color 0.2s linear, border-color 0.2s linear, color 0.2s linear, box-shadow 0.5s linear;
 }
 
@@ -237,7 +356,29 @@ a.header-button:hover{
     transition: background-color 0.2s linear, border-color 0.2s linear, color 0.2s linear, box-shadow 0.5s linear;
 }
 
-/*sekcja usability */
+@media (max-width: 480px){
+    .hero-content h1{
+        font-size: 2.5em;
+        line-height: 1.2;
+        background: #ffffff54;
+    }
+
+    .hero-content p {
+        margin-top: 0;
+        font-size: 1.2em;
+        color: #000;
+        background: #ffffff54;
+    }
+
+    .hero-content a{
+        font-size: 1.5em;
+        word-spacing: 5px;
+    }
+}
+
+/* ---------------------------------------------------------------------
+    sekcja #usability
+*/
 .usability {
 
     text-align: center;
@@ -247,7 +388,7 @@ a.header-button:hover{
 
 .right {
     float: right;
-    margin-right: 50px;
+    /*margin-right: 50px;*/
 }
 /*
 .left {
@@ -268,6 +409,7 @@ a.header-button:hover{
     width: 40%;
     list-style-type: none;
     margin-top:50px;
+    padding: 0;
 }
 
 .clear {
@@ -336,6 +478,18 @@ a.header-button:hover{
 
 }
 
+@media (max-width: 1150px) {
+    .usability-ul {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .right.usability-ul {
+        margin-top: 0;
+        float:none;
+    }
+}
+
+
 
 
 
@@ -380,7 +534,7 @@ a.header-button:hover{
     display: flex;
     background-size: cover;
     background-position: center;
-    padding: 201px 80px;
+    /*padding: 201px 80px;*/
 }
 
 .subscribe{
@@ -388,9 +542,10 @@ a.header-button:hover{
     padding: 32px;
     border: 1px solid #ccc;
     border-radius: 40px;
-    margin: 0 20px;
     box-shadow: 2px 2px 10px #ccc;
     background: #fafafafa;
+    max-width: 800px;
+    margin: 50px auto;
 }
 
 form.subscribe-form {
@@ -439,7 +594,7 @@ button.subscribe-submit:focus{
     outline: none;
 }
 button.subscribe-submit:hover{
-    background: #aaa;
+    background: #ef4730;
 }
 
 .subscribe-label{
@@ -466,35 +621,56 @@ button.subscribe-submit:hover{
 .subscribe-label > div p{
     margin: 0;
 }
+@media (max-width: 610px){
+    .subscribe-label i{
+        font-size: 4em;
+        margin: 0;
+    }
+}
+
+@media (max-width: 400px){
+    .subscribe-label i{
+        display: none;
+    }
+    .subscribe-label div{
+        margin: 0;
+    }
+
+    .subscribe button{
+        position: static;
+        font-size: 0.9em;
+        background: #e46140;
+        border-radius: 27px;
+        margin: 10px auto 0;
+    }
+
+    .subscribe form{
+        min-width: 100%;
+    }
+
+    .subscribe input{
+        padding: 5px 3px;
+        width: 95%;
+        font-size: 1.1em;
+    }
+}
+
+/* ---------------------------------------------------------------------
+    sekcja #footer
+*/
 
 footer{
     padding: 5px 20px;
     color: #fefefefe;
     background: #3a3a3a;
     text-align: right;
+
 }
 
 footer p{
     padding: 0;
     margin: 0;
 }
-
-
-
-/* ---------------------------------------------------------------------
-    sekcja #footer
-*/
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -675,3 +851,37 @@ footer p{
         page-break-after: avoid;
     }
 }
+
+/*features*/
+.features-li {
+    width: auto;
+    height: auto;
+    text-align: center;
+    display: block;
+}
+
+.features-flex {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.features-local {
+
+}
+
+.features-li img {
+    width: 129px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+ h3.title {
+     font-weight: 700;
+     margin: 5px 0;
+     text-align: center;
+     font-size: 1.2em;
+     margin: 15px;
+ }
