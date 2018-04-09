@@ -621,6 +621,16 @@ button.subscribe-submit:hover{
 .subscribe-label > div p{
     margin: 0;
 }
+
+.subscribe-footer{
+    font-size: 0.7em;
+    text-align: justify;
+    color: #7d7d7d;
+    display: block;
+    margin: 15px auto 0;
+    width: fit-content;
+
+}
 @media (max-width: 610px){
     .subscribe-label i{
         font-size: 4em;
