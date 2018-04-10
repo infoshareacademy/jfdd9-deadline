@@ -289,7 +289,7 @@ h5.title{
 .hero{
     height: 100vh;
     width: 100%;
-    background: url(../img/hero-background.jpg) no-repeat fixed center;
+    background: url(../img/hero-background-min.jpg) no-repeat fixed center;
     background-size: cover;
 }
 
@@ -530,7 +530,7 @@ a.header-button:hover{
 
 #subscribe {
     /*background-image: url("../img/white-background.png");*/
-    background: url(../img/subscribe-background.jpg) no-repeat fixed 100%;
+    background: url(../img/subscribe-background-min.jpg) no-repeat fixed 100%;
     display: flex;
     background-size: cover;
     background-position: center;
@@ -620,6 +620,16 @@ button.subscribe-submit:hover{
 }
 .subscribe-label > div p{
     margin: 0;
+}
+
+.subscribe-footer{
+    font-size: 0.7em;
+    text-align: justify;
+    color: #7d7d7d;
+    display: block;
+    margin: 15px auto 0;
+    width: fit-content;
+
 }
 @media (max-width: 610px){
     .subscribe-label i{
@@ -865,9 +875,16 @@ footer p{
     justify-content: space-around;
     list-style: none;
     flex-wrap: wrap;
+
+}
+section#features {
+    background-color: #e46140;
 }
 
-.features-local {
+#features .title {
+    margin:0 15px;
+    font-size:1.3rem;
+    color:#fff;
 
 }
 
@@ -876,6 +893,7 @@ footer p{
     height: auto;
     margin-bottom: 20px;
     margin-top: 20px;
+
 }
 
  h3.title {
@@ -883,5 +901,12 @@ footer p{
      margin: 5px 0;
      text-align: center;
      font-size: 1.2em;
-     margin: 15px;
+ }
+
+ .features-icon {
+     font-size: 8.5rem;
+     color: #ffffff;
+     margin-bottom: 2rem;
+     margin-top: 2rem;
+
  }
