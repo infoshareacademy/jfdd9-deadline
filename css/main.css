@@ -900,3 +900,15 @@ section#features {
      margin-top: 2rem;
 
  }
+
+
+@media (max-width: 1220px) {
+    .features-li{
+        width: 50%;
+    }
+}
+@media (max-width: 650px) {
+    .features-li{
+        width: 100%;
+    }
+}
