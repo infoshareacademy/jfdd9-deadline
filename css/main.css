@@ -127,7 +127,6 @@ nav ul{
     margin-right: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
-    cursor: default;
 
 }
 figure{
@@ -143,8 +142,6 @@ nav li {
 
 }
 #navbar .nav-link {
-
-    cursor: default;
     font-size: 20px;
     text-transform: uppercase;
     text-decoration: none;
@@ -156,7 +153,6 @@ nav li {
 
 }
 #navbar .nav-link:hover {
-    cursor: default;
     font-size: 20px;
     text-transform: uppercase;
     text-decoration: none;
@@ -523,6 +519,11 @@ a.header-button:hover{
 }
 
 
+.team-item table{
+    margin: 0 auto;
+    text-align: center;
+}
+
 
 /* ---------------------------------------------------------------------
     sekcja #subscribe
@@ -595,6 +596,7 @@ button.subscribe-submit:focus{
 }
 button.subscribe-submit:hover{
     background: #ef4730;
+    cursor: pointer;
 }
 
 .subscribe-label{
@@ -631,10 +633,25 @@ button.subscribe-submit:hover{
     width: fit-content;
 
 }
-@media (max-width: 610px){
+
+
+@media (max-width: 770px) {
     .subscribe-label i{
-        font-size: 4em;
-        margin: 0;
+        display: none;
+    }
+
+    .subscribe-label > div{
+        margin-bottom: 0;
+        display: block;
+        text-align: center;
+    }
+}
+
+@media (max-width: 610px){
+
+    input.subscribe-input{
+        text-align: left;
+        font-size: 1.1em;
     }
 }
 
@@ -650,18 +667,23 @@ button.subscribe-submit:hover{
         position: static;
         font-size: 0.9em;
         background: #e46140;
-        border-radius: 27px;
-        margin: 10px auto 0;
+        border-radius: 5px;
+        width: 100%;
+        margin: 17px 0 0;
     }
 
-    .subscribe form{
+    .subscribe form.subscribe-form{
         min-width: 100%;
+        margin: 0;
     }
 
-    .subscribe input{
-        padding: 5px 3px;
-        width: 95%;
-        font-size: 1.1em;
+    .subscribe input.subscribe-input{
+        padding: 8px 5px;
+        width: 100%;
+        font-size: 1em;
+        box-shadow: none;
+        border-radius: 5px;
+        box-sizing: border-box;
     }
 }
 
