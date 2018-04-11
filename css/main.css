@@ -519,6 +519,11 @@ a.header-button:hover{
 }
 
 
+.team-item table{
+    margin: 0 auto;
+    text-align: center;
+}
+
 
 /* ---------------------------------------------------------------------
     sekcja #subscribe
@@ -678,6 +683,7 @@ button.subscribe-submit:hover{
         font-size: 1em;
         box-shadow: none;
         border-radius: 5px;
+        box-sizing: border-box;
     }
 }
 
