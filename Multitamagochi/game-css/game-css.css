@@ -3,8 +3,7 @@ body{
 }
 
 #game{
-    border: 5px solid yellow;
-    height: 50vh;
+    /*border: 5px solid yellow;*/
     width: 50vw;
     margin: 10px auto;
 }
@@ -20,24 +19,42 @@ body{
 }
 
 #cats{
-    background-color: #3a3333;
-    height: 100px;
-    width: 100px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+#cats div{
+    width: 200px;
+    height: 200px;
+}
+
+#cat1{
+    background: url(../img/cat1.png) no-repeat center;
+    background-size: cover;
 }
 
 #items{
     display: flex;
     justify-content: space-around;
+    padding: 10px 0;
+    background: #683825;
 }
 
 #items > div{
-
-    border: 2px solid blue;
-    background-color: #e0785d;
+    /*background-color: #e0785d;*/
     min-height: 100px;
     min-width: 99px;
     max-width: 100px;
+    padding: 5px;
 }
+
+#items img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
 td {
     border: 1px solid black;
     width: 30px;
@@ -45,11 +62,13 @@ td {
     background-color: yellow;
 }
 .active_item{
-    border: 5px solid red;
+    4px solid #5c98bd;
 }
 .food{
     background-image: url("catfood.jpeg");
 
-
-
 }
+
+
+
+
