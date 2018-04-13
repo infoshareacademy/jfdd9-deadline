@@ -159,9 +159,13 @@ nav li {
     color: white;
     font-weight: 700;
     letter-spacing: 1px;
-    text-shadow: 0px 3px 5px #771d04;
+    /*text-shadow: 0px 3px 5px #771d04;*/
     transition: text-shadow 0.2s;
+}
 
+#navbar li:hover{
+    background: #f59379;
+    border-radius: 5px;
 }
 
 
@@ -243,6 +247,10 @@ input[type=checkbox]{
     }
     .hamburger img{
         height: 40px;
+    }
+
+    #navbar a.nav-link {
+        padding: 10px 20px;
     }
 
 }
