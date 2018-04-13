@@ -163,6 +163,13 @@ nav li {
     transition: text-shadow 0.2s;
 
 }
+
+
+#navbar li.active{
+    background: #f59379;
+    border-radius: 5px;
+}
+
 .right-side{
     position: relative;
     display: inline-block;
