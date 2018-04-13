@@ -56,9 +56,9 @@ function needRandomizer(tim) {setInterval(randomNeed,tim)
 }
 needRandomizer((getNumberFromRange(4000)));
     var item = itemsNode.querySelectorAll('div');
-
+var clickedItem;
 var activeItem = false;
- // dodawanie eventlistenera
+ // dodawanie eventlistenera do itemów
     itemsNode.addEventListener('click',function (event) {
         var clickedElement = event.target;
         if (activeItem !== false){
@@ -78,7 +78,7 @@ var activeItem = false;
 
             }
             console.log(clickedElement);
-
+            clickedItem = clickedElement;
 
         }
     });
