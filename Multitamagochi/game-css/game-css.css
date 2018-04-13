@@ -32,7 +32,6 @@ body{
 
 #items > div{
 
-    border: 2px solid blue;
     background-color: #e0785d;
     min-height: 100px;
     min-width: 99px;
