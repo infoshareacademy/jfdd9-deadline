@@ -65,34 +65,34 @@ var needsClick = (function () {
     var points = 0;
     var clickedItemId;
     var activeItem = false;
-
+// listener dla itemów
     function init () {
-        itemsNode.addEventListener('click', function (event) {
-
-            var clickedElement = event.target;
-            if (activeItem !== false) {
-                if (activeItem !== clickedElement) {
-                    return
+        var items = document.querySelectorAll('.item');
+        items.forEach(function (item) {
+            item.addEventListener('click', function (event) {
+                var clickedElement = event.currentTarget;
+                if (activeItem !== false) {
+                    if (activeItem !== clickedElement) {
+                        return
+                    }
                 }
-            }
-            if (clickedElement.classList.contains('item')) {
-                if (!clickedElement.classList.contains('active_item')) {
-                    clickedElement.classList.add('active_item');
-                    activeItem = clickedElement;
-
-                    clickedItemId = activeItem.getAttribute('id');
+                if (clickedElement.classList.contains('item')) {
+                    if (!clickedElement.classList.contains('active_item')) {
+                        clickedElement.classList.add('active_item');
+                        activeItem = clickedElement;
+                        clickedItemId = activeItem.getAttribute('id');
 
 
-                } else {
-                    clickedElement.classList.remove('active_item')
-                    activeItem = false;
-                    clickedItemId = "";
+                    } else {
+                        clickedElement.classList.remove('active_item');
+                        activeItem = false;
+                        clickedItemId = "";
 
+                    }
                 }
-            }
-
+            })
         });
-
+// listener dla potrzeb
         needsNode.addEventListener('click', function () {
             console.log(clickedItemId);
             console.log(needs[randomNeedIndex] );
