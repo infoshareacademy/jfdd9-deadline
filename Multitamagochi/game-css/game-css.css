@@ -12,10 +12,13 @@ body{
     background-color: #5c98bd;
 }
 
-#needs{
+.needs{
     background-color: red;
-    width: 60px;
-    height: 60px;
+    background: url("../img/chat (1).png") no-repeat center;
+    background-size: cover;
+    width: 7rem;
+    height: 7rem;
+    margin-bottom: 1rem;
 }
 
 #cats{
@@ -38,7 +41,7 @@ body{
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
-    background: #683825;
+    background: #495059;
 }
 
 #items > div{
