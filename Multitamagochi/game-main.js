@@ -98,7 +98,7 @@ var needsClick = (function () {
             console.log(needs[randomNeedIndex] );
             if (activeItem === false){return}
 
-            if(clickedItemId === needsNode.className){
+            if(('needs '+ clickedItemId) === needsNode.className){
                 console.log('success');
                 activeItem.classList.remove('active_item');
                 activeItem = false;
@@ -108,7 +108,7 @@ var needsClick = (function () {
                 points += 1;
                 pointsNode.innerText = points;
 
-            }else if(clickedItemId !== needsNode.className){
+            }else if(('needs '+clickedItemId) !== needsNode.className){
                 console.log('fail');
                 activeItem.classList.remove('active_item');
                 console.log(activeItem);
