@@ -4,7 +4,7 @@ body{
 
 #game{
     /*border: 5px solid yellow;*/
-    width: 50vw;
+    width: 90vw;
     margin: 10px auto;
 }
 
@@ -20,8 +20,8 @@ body{
 
 #cats{
     display: flex;
-    justify-content: center;
-    padding: 10px;
+    justify-content: space-around;
+    padding: 10rem 10px 2rem;
 }
 
 /*#cats div{*/
@@ -62,7 +62,7 @@ td {
     background-color: yellow;
 }
 .active_item{
-    4px solid #5c98bd;
+    outline: 4px solid #5c98bd;
 }
 .food{
     background-image: url("catfood.jpeg");
