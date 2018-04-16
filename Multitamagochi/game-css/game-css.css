@@ -62,7 +62,7 @@ td {
     background-color: yellow;
 }
 .active_item{
-    4px solid #5c98bd;
+    border: 4px solid #5c98bd;
 }
 .food{
     background-image: url("catfood.jpeg");
