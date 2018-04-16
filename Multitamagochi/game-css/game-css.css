@@ -8,6 +8,15 @@ body{
     margin: 10px auto;
 }
 
+.game-info{
+    background: #495059;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 1.1em;
+}
+
 #main{
     background-color: #5c98bd;
 }
