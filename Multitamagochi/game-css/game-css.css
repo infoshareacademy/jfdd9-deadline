@@ -12,7 +12,7 @@ body{
     background-color: #5c98bd;
 }
 
-#needs{
+.needs{
     background-color: red;
     width: 60px;
     height: 60px;
