@@ -6,7 +6,7 @@ var foodNode = document.getElementById('food');
 var handNode = document.getElementById('hand');
 var brushNode = document.getElementById('brush');
 var woolNode = document.getElementById('wool');
-var needsNode = document.getElementById('needs');
+var needsNode = document.querySelector('.needs');
 var needs = ['food', 'hand', 'brush', 'wool'];
 
 var height = 2;
@@ -45,7 +45,7 @@ function randomNeed() {
     needsNode.innerText = needs[randomNeedIndex];
     needsNode.classList.add(needs[randomNeedIndex]);
     setTimeout(function () {
-        needsNode.className = '';
+        needsNode.className = 'needs';
         needsNode.innerText = '';
     }, 8000);
     return randomNeedIndex;
@@ -98,22 +98,22 @@ var needsClick = (function () {
             console.log(needs[randomNeedIndex] );
             if (activeItem === false){return}
 
-            if(clickedItemId === needsNode.className){
+            if(('needs '+ clickedItemId) === needsNode.className){
                 console.log('success');
                 activeItem.classList.remove('active_item');
                 activeItem = false;
                 clickedItemId = "";
-                needsNode.className = '';
+                needsNode.className = 'needs';
                 needsNode.innerText = '';
                 points += 1;
                 pointsNode.innerText = points;
 
-            }else if(clickedItemId !== needsNode.className){
+            }else if(('needs '+clickedItemId) !== needsNode.className){
                 console.log('fail');
                 activeItem.classList.remove('active_item');
                 console.log(activeItem);
                 activeItem = false;
-                needsNode.className = '';
+                needsNode.className = 'needs';
 
                 points -= 1;
                 pointsNode.innerText = points;
