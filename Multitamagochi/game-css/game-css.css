@@ -28,6 +28,7 @@ body{
     width: 7rem;
     height: 7rem;
     margin-bottom: 1rem;
+    visibility: hidden;
 }
 
 
