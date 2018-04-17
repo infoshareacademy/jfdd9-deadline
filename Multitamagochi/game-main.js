@@ -6,20 +6,19 @@ var foodNode = document.getElementById('food');
 var handNode = document.getElementById('hand');
 var brushNode = document.getElementById('brush');
 var woolNode = document.getElementById('wool');
-var needsNode = document.querySelector('.needs');
+var needsNode = document.querySelectorAll('.needs');
 var needs = ['food', 'hand', 'brush', 'wool'];
+var points = 0;
 
 var height = 2;
 var width = 2;
 var randomNeedIndex;
 var timeNode = document.getElementById('timer');
-
-//var needsTable = needsNode.appendChild(createNeedsTable(width,height));
-//  var needsTd = needsTable.querySelectorAll('td');
-
+var catIndex;
 /*licznik czasu */
-var timeV = 0;
 
+var timeV = 0;
+var timeoutId;
 
 var time = (function timer() {
     setInterval(function () {
@@ -41,20 +40,19 @@ function getNumberFromRange(range) {
 
 /* losowanie potrzeby*/
 function randomNeed() {
+    catIndex = getNumberFromRange(4);
     randomNeedIndex = getNumberFromRange(4);
-    needsNode.innerHTML = '<img src="img/item-' + needs[randomNeedIndex] + '.png" />';
-    needsNode.classList.add(needs[randomNeedIndex]);
-    console.log(needs[randomNeedIndex]);
-    setTimeout(function () {
-        needsNode.className = 'needs';
-        needsNode.innerText = '';
-    }, 8000);
+    needsNode[catIndex].innerHTML = '<img src="img/item-' + needs[randomNeedIndex] + '.png" />';
+    needsNode[catIndex].classList.add(needs[randomNeedIndex]);
+    timeoutId = setTimeout(function () {
+        needsNode[catIndex].className = 'needs';
+        needsNode[catIndex].innerText = '';
+        points -=1;
+        pointsNode.innerText = points;
+
+    }, 4000);
     return randomNeedIndex;
 }
-
-
-
-
 
 function needRandomizer(tim) {
     setInterval(randomNeed, tim)
@@ -67,14 +65,14 @@ needRandomizer(5000);
 // dodawanie eventlistenera do itemów
 var needsClick = (function () {
     var itemsNode = document.getElementById('items');
-    var points = 0;
     var clickedItemId;
     var activeItem = false;
+
 // listener dla itemów
-    function init () {
+    function init (catIndex) {
         var items = document.querySelectorAll('.item');
         items.forEach(function (item) {
-            item.addEventListener('click', function (event) {
+            item.addEventListener('click', function (event){
                 var clickedElement = event.currentTarget;
                 if (activeItem !== false) {
                     if (activeItem !== clickedElement) {
@@ -98,34 +96,40 @@ var needsClick = (function () {
             })
         });
 // listener dla potrzeb
-        needsNode.addEventListener('click', function () {
+        Object.values(needsNode).map( function(e){ e.addEventListener('click', function () {
             console.log(clickedItemId);
-            console.log(needs[randomNeedIndex] );
-            if (activeItem === false){return}
+            console.log(needs[randomNeedIndex]);
+            if (activeItem === false) {
+                return
+            }
 
-            if(('needs '+ clickedItemId) === needsNode.className){
+            if (('needs ' + clickedItemId) === this.className) {
                 console.log('success');
                 activeItem.classList.remove('active_item');
                 activeItem = false;
                 clickedItemId = "";
-                needsNode.className = 'needs';
-                needsNode.innerText = '';
+                this.className = 'needs';
+                this.innerText = '';
                 points += 1;
                 pointsNode.innerText = points;
+                clearTimeout(timeoutId);
 
-            }else if(('needs '+clickedItemId) !== needsNode.className){
+            } else if (('needs ' + clickedItemId) !== this.className) {
                 console.log('fail');
                 activeItem.classList.remove('active_item');
                 console.log(activeItem);
                 activeItem = false;
-                needsNode.className = 'needs';
-
+                this.className = 'needs';
+                this.innerText = "";
                 points -= 1;
                 pointsNode.innerText = points;
-            }else{
+                clearTimeout(timeoutId);
+            } else {
                 console.log('dun click me bro')
             }
         })
+    })
+
     }
 
 
@@ -135,4 +139,4 @@ var needsClick = (function () {
 })();
 
 
-needsClick.init()
+needsClick.init(3);
