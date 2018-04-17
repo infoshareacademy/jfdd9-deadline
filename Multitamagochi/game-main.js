@@ -8,18 +8,17 @@ var brushNode = document.getElementById('brush');
 var woolNode = document.getElementById('wool');
 var needsNode = document.querySelector('.needs');
 var needs = ['food', 'hand', 'brush', 'wool'];
+var points = 0;
 
 var height = 2;
 var width = 2;
 var randomNeedIndex;
 var timeNode = document.getElementById('timer');
 
-//var needsTable = needsNode.appendChild(createNeedsTable(width,height));
-//  var needsTd = needsTable.querySelectorAll('td');
-
 /*licznik czasu */
-var timeV = 0;
 
+var timeV = 0;
+var timeoutId;
 
 var time = (function timer() {
     setInterval(function () {
@@ -44,10 +43,13 @@ function randomNeed() {
     randomNeedIndex = getNumberFromRange(4);
     needsNode.innerText = needs[randomNeedIndex];
     needsNode.classList.add(needs[randomNeedIndex]);
-    setTimeout(function () {
+    timeoutId = setTimeout(function () {
         needsNode.className = 'needs';
         needsNode.innerText = '';
-    }, 8000);
+        points -=1;
+        pointsNode.innerText = points;
+
+    }, 4000);
     return randomNeedIndex;
 }
 
@@ -55,21 +57,21 @@ function needRandomizer(tim) {
     setInterval(randomNeed, tim)
 }
 
-needRandomizer(10000);
+needRandomizer(5000);
 
 
 
 // dodawanie eventlistenera do itemów
 var needsClick = (function () {
     var itemsNode = document.getElementById('items');
-    var points = 0;
     var clickedItemId;
     var activeItem = false;
+
 // listener dla itemów
     function init () {
         var items = document.querySelectorAll('.item');
         items.forEach(function (item) {
-            item.addEventListener('click', function (event) {
+            item.addEventListener('click', function (event){
                 var clickedElement = event.currentTarget;
                 if (activeItem !== false) {
                     if (activeItem !== clickedElement) {
@@ -107,6 +109,7 @@ var needsClick = (function () {
                 needsNode.innerText = '';
                 points += 1;
                 pointsNode.innerText = points;
+                clearTimeout(timeoutId);
 
             }else if(('needs '+clickedItemId) !== needsNode.className){
                 console.log('fail');
@@ -114,9 +117,10 @@ var needsClick = (function () {
                 console.log(activeItem);
                 activeItem = false;
                 needsNode.className = 'needs';
-
+                needsNode.innerText = "";
                 points -= 1;
                 pointsNode.innerText = points;
+                clearTimeout(timeoutId);
             }else{
                 console.log('dun click me bro')
             }
@@ -130,55 +134,4 @@ var needsClick = (function () {
 })();
 
 
-needsClick.init()
-
-// for(var i=0;i < item.length; i++){
-//      item[i].addEventListener('click',function(){
-//       item[element].classList.add('active_item');
-//          console.log('lol')
-//
-//  })}
-/*
-//food
-   item[0].addEventListener('click',function(){
-       if (item[0].classList.contains('active_item')) {
-           item[0].classList.remove('active_item');
-           console.log('lol')
-       } else {
-           item[3].classList.add('active_item');
-           console.log(' trol')
-       }
-
-       //hand
-   item[1].addEventListener('click',function(){
-       if (item[1].classList.contains('active_item')) {
-           item[1].classList.remove('active_item');
-           console.log('lol')
-       } else {
-           item[1].classList.add('active_item');
-           console.log(' trol')
-       }
-
-       //brush
-   item[2].addEventListener('click',function(){
-       if (item[2].classList.contains('active_item')) {
-           item[2].classList.remove('active_item');
-           console.log('lol')
-       } else {
-           item[2].classList.add('active_item');
-           console.log(' trol')
-       }
-
-       //wool
-   item[3].addEventListener('click',function(){
-       if (item[3].classList.contains('active_item')) {
-           item[3].classList.remove('active_item');
-           console.log('lol')
-       } else {
-           item[3].classList.add('active_item');
-           console.log(' trol')
-       }})
-
-       */
-
-
+needsClick.init();
