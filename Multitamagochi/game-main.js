@@ -26,13 +26,13 @@ var clickedItemId;
 var activeItem = false;
 
 
-function removeClass(){
+function removeClass(target){
 
     activeItem.classList.remove('active_item');
     console.log(activeItem);
     activeItem = false;
-    this.className = 'needs';
-    this.innerText = "";
+    target.className = 'needs';
+    target.innerText = "";
 }
 
 function countPoints(){
@@ -130,14 +130,14 @@ var needsClick = (function () {
 
             if (('needs ' + clickedItemId) === this.className) {
                 console.log('success');
-                removeClass();
+                removeClass(e);
                 clickedItemId = "";
                 addPoints();
                 clearTimeout(timeoutId);
 
             } else if (('needs ' + clickedItemId) !== this.className) {
                 console.log('fail');
-                removeClass();
+                removeClass(e);
                 decreasePoints();
                 clearTimeout(timeoutId);
             } else {
