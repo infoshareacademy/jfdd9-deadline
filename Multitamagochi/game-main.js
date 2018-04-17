@@ -1,6 +1,8 @@
 var gameBox = document.getElementById('game');
 var mainNode = document.getElementById('main');
 var pointsNode = document.getElementById('points');
+var pointsCat = document.getElementById('pointsImg');
+var timerBar = document.getElementById('timerBar')
 var catsNode = document.getElementById('cats');
 var foodNode = document.getElementById('food');
 var handNode = document.getElementById('hand');
@@ -19,6 +21,32 @@ var catIndex;
 
 var timeV = 0;
 var timeoutId;
+var itemsNode = document.getElementById('items');
+var clickedItemId;
+var activeItem = false;
+
+
+function removeClass(){
+
+    activeItem.classList.remove('active_item');
+    console.log(activeItem);
+    activeItem = false;
+    this.className = 'needs';
+    this.innerText = "";
+}
+
+function countPoints(){
+    pointsNode.innerText = points;
+    pointsCat.style.marginleft = (50 + points)+"%"
+}
+function addPoints(){
+    points +=1;
+    countPoints() ;
+}
+function decreasePoints(){
+    points -=1;
+    countPoints();
+}
 
 var time = (function timer() {
     setInterval(function () {
@@ -47,8 +75,7 @@ function randomNeed() {
     timeoutId = setTimeout(function () {
         needsNode[catIndex].className = 'needs';
         needsNode[catIndex].innerText = '';
-        points -=1;
-        pointsNode.innerText = points;
+        decreasePoints();
 
     }, 4000);
     return randomNeedIndex;
@@ -64,9 +91,7 @@ needRandomizer(5000);
 
 // dodawanie eventlistenera do itemów
 var needsClick = (function () {
-    var itemsNode = document.getElementById('items');
-    var clickedItemId;
-    var activeItem = false;
+
 
 // listener dla itemów
     function init (catIndex) {
@@ -105,24 +130,15 @@ var needsClick = (function () {
 
             if (('needs ' + clickedItemId) === this.className) {
                 console.log('success');
-                activeItem.classList.remove('active_item');
-                activeItem = false;
+                removeClass();
                 clickedItemId = "";
-                this.className = 'needs';
-                this.innerText = '';
-                points += 1;
-                pointsNode.innerText = points;
+                addPoints();
                 clearTimeout(timeoutId);
 
             } else if (('needs ' + clickedItemId) !== this.className) {
                 console.log('fail');
-                activeItem.classList.remove('active_item');
-                console.log(activeItem);
-                activeItem = false;
-                this.className = 'needs';
-                this.innerText = "";
-                points -= 1;
-                pointsNode.innerText = points;
+                removeClass();
+                decreasePoints();
                 clearTimeout(timeoutId);
             } else {
                 console.log('dun click me bro')
