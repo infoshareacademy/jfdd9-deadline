@@ -4,29 +4,21 @@ var pointsNode = document.getElementById('points');
 var pointsCat = document.getElementById('pointsImg');
 var timerBar = document.getElementById('timerBar')
 var catsNode = document.getElementById('cats');
-var foodNode = document.getElementById('food');
-var handNode = document.getElementById('hand');
-var brushNode = document.getElementById('brush');
-var woolNode = document.getElementById('wool');
 var needsNode = document.querySelectorAll('.needs');
 var needs = ['food', 'hand', 'brush', 'wool'];
 var points = 0;
-
 var height = 2;
 var width = 2;
 var randomNeedIndex;
 var timeNode = document.getElementById('timer');
 var catIndex;
-/*licznik czasu */
-
-var timeV = 0;
 var timeoutId;
 var itemsNode = document.getElementById('items');
 var clickedItemId;
 var activeItem = false;
+var timeV = 0;
 
-pointsCat.style.marginLeft= (50 + points)+"%";
-
+countPoints();
 function removeClass(target){
 
     activeItem.classList.remove('active_item');
@@ -50,7 +42,7 @@ function decreasePoints(){
     points -=1;
     countPoints();
 }
-
+/*licznik czasu */
 var time = (function timer() {
     setInterval(function () {
         timeV += 1;
@@ -79,7 +71,7 @@ function randomNeed() {
     timeoutId = setTimeout(function () {
         needsNode[catIndex].className = 'needs';
         needsNode[catIndex].innerText = '';
-        needsNode[catIndex].style.visibility ='hidden'
+        needsNode[catIndex].style.visibility ='hidden';
         decreasePoints();
 
     }, 4000);
