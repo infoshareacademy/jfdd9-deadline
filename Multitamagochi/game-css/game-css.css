@@ -30,6 +30,12 @@ body{
     margin-bottom: 1rem;
 }
 
+
+#cats .needs > img{
+    width: 65%;
+    height: auto;
+    padding: 19px;
+}
 #cats{
     display: flex;
     justify-content: space-around;
@@ -76,10 +82,22 @@ td {
 .active_item{
     outline: 4px solid #5c98bd;
 }
-.food{
-    background-image: url("catfood.jpeg");
-}
 
+#points {
+    border: #e46140 0.1rem solid;
+    width: 50%;
+    height: 2rem;
+    background: linear-gradient(to right, darkred, forestgreen);
+}
+#points img{
+    height:100%;
+    width:auto;
+}
+#timer {
+    width: 50%;
+    height: 2rem;
+    border: #5c98bd 0.1rem solid;
+}
 
 
 
