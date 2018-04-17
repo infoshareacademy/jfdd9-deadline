@@ -42,8 +42,9 @@ function getNumberFromRange(range) {
 /* losowanie potrzeby*/
 function randomNeed() {
     randomNeedIndex = getNumberFromRange(4);
-    needsNode.innerText = needs[randomNeedIndex];
+    needsNode.innerHTML = '<img src="img/item-' + needs[randomNeedIndex] + '.png" />';
     needsNode.classList.add(needs[randomNeedIndex]);
+    console.log(needs[randomNeedIndex]);
     setTimeout(function () {
         needsNode.className = 'needs';
         needsNode.innerText = '';
@@ -51,11 +52,12 @@ function randomNeed() {
     return randomNeedIndex;
 }
 
+
 function needRandomizer(tim) {
     setInterval(randomNeed, tim)
 }
 
-needRandomizer(10000);
+needRandomizer(5000);
 
 
 
@@ -131,54 +133,3 @@ var needsClick = (function () {
 
 
 needsClick.init()
-
-// for(var i=0;i < item.length; i++){
-//      item[i].addEventListener('click',function(){
-//       item[element].classList.add('active_item');
-//          console.log('lol')
-//
-//  })}
-/*
-//food
-   item[0].addEventListener('click',function(){
-       if (item[0].classList.contains('active_item')) {
-           item[0].classList.remove('active_item');
-           console.log('lol')
-       } else {
-           item[3].classList.add('active_item');
-           console.log(' trol')
-       }
-
-       //hand
-   item[1].addEventListener('click',function(){
-       if (item[1].classList.contains('active_item')) {
-           item[1].classList.remove('active_item');
-           console.log('lol')
-       } else {
-           item[1].classList.add('active_item');
-           console.log(' trol')
-       }
-
-       //brush
-   item[2].addEventListener('click',function(){
-       if (item[2].classList.contains('active_item')) {
-           item[2].classList.remove('active_item');
-           console.log('lol')
-       } else {
-           item[2].classList.add('active_item');
-           console.log(' trol')
-       }
-
-       //wool
-   item[3].addEventListener('click',function(){
-       if (item[3].classList.contains('active_item')) {
-           item[3].classList.remove('active_item');
-           console.log('lol')
-       } else {
-           item[3].classList.add('active_item');
-           console.log(' trol')
-       }})
-
-       */
-
-
