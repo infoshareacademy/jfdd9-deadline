@@ -33,11 +33,13 @@ function removeClass(target){
     activeItem = false;
     target.className = 'needs';
     target.innerText = "";
+    needsNode[catIndex].style.visibility ='hidden'
+
 }
 
 function countPoints(){
-    pointsNode.innerText = points;
-    pointsCat.style.marginleft = (50 + points)+"%"
+    console.log(points);
+    pointsCat.style.marginLeft= (50 + points)+"%"
 }
 function addPoints(){
     points +=1;
@@ -72,9 +74,11 @@ function randomNeed() {
     randomNeedIndex = getNumberFromRange(4);
     needsNode[catIndex].innerHTML = '<img src="img/item-' + needs[randomNeedIndex] + '.png" />';
     needsNode[catIndex].classList.add(needs[randomNeedIndex]);
+    needsNode[catIndex].style.visibility ='visible';
     timeoutId = setTimeout(function () {
         needsNode[catIndex].className = 'needs';
         needsNode[catIndex].innerText = '';
+        needsNode[catIndex].style.visibility ='hidden'
         decreasePoints();
 
     }, 4000);
@@ -155,4 +159,4 @@ var needsClick = (function () {
 })();
 
 
-needsClick.init(3);
+needsClick.init();
