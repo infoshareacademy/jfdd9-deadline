@@ -6,7 +6,7 @@ var foodNode = document.getElementById('food');
 var handNode = document.getElementById('hand');
 var brushNode = document.getElementById('brush');
 var woolNode = document.getElementById('wool');
-var needsNode = document.querySelector('.needs');
+var needsNode = document.querySelectorAll('.needs');
 var needs = ['food', 'hand', 'brush', 'wool'];
 var points = 0;
 
@@ -14,7 +14,7 @@ var height = 2;
 var width = 2;
 var randomNeedIndex;
 var timeNode = document.getElementById('timer');
-
+var catIndex;
 /*licznik czasu */
 
 var timeV = 0;
@@ -40,12 +40,13 @@ function getNumberFromRange(range) {
 
 /* losowanie potrzeby*/
 function randomNeed() {
+    catIndex = getNumberFromRange(4);
     randomNeedIndex = getNumberFromRange(4);
-    needsNode.innerText = needs[randomNeedIndex];
-    needsNode.classList.add(needs[randomNeedIndex]);
+    needsNode[catIndex].innerText = needs[randomNeedIndex];
+    needsNode[catIndex].classList.add(needs[randomNeedIndex]);
     timeoutId = setTimeout(function () {
-        needsNode.className = 'needs';
-        needsNode.innerText = '';
+        needsNode[catIndex].className = 'needs';
+        needsNode[catIndex].innerText = '';
         points -=1;
         pointsNode.innerText = points;
 
@@ -68,7 +69,7 @@ var needsClick = (function () {
     var activeItem = false;
 
 // listener dla itemów
-    function init () {
+    function init (catIndex) {
         var items = document.querySelectorAll('.item');
         items.forEach(function (item) {
             item.addEventListener('click', function (event){
@@ -95,36 +96,40 @@ var needsClick = (function () {
             })
         });
 // listener dla potrzeb
-        needsNode.addEventListener('click', function () {
+        Object.values(needsNode).map( function(e){ e.addEventListener('click', function () {
             console.log(clickedItemId);
-            console.log(needs[randomNeedIndex] );
-            if (activeItem === false){return}
+            console.log(needs[randomNeedIndex]);
+            if (activeItem === false) {
+                return
+            }
 
-            if(('needs '+ clickedItemId) === needsNode.className){
+            if (('needs ' + clickedItemId) === this.className) {
                 console.log('success');
                 activeItem.classList.remove('active_item');
                 activeItem = false;
                 clickedItemId = "";
-                needsNode.className = 'needs';
-                needsNode.innerText = '';
+                this.className = 'needs';
+                this.innerText = '';
                 points += 1;
                 pointsNode.innerText = points;
                 clearTimeout(timeoutId);
 
-            }else if(('needs '+clickedItemId) !== needsNode.className){
+            } else if (('needs ' + clickedItemId) !== this.className) {
                 console.log('fail');
                 activeItem.classList.remove('active_item');
                 console.log(activeItem);
                 activeItem = false;
-                needsNode.className = 'needs';
-                needsNode.innerText = "";
+                this.className = 'needs';
+                this.innerText = "";
                 points -= 1;
                 pointsNode.innerText = points;
                 clearTimeout(timeoutId);
-            }else{
+            } else {
                 console.log('dun click me bro')
             }
         })
+    })
+
     }
 
 
@@ -134,4 +139,4 @@ var needsClick = (function () {
 })();
 
 
-needsClick.init();
+needsClick.init(3);
