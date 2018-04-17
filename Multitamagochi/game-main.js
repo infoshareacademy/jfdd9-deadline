@@ -25,6 +25,7 @@ var itemsNode = document.getElementById('items');
 var clickedItemId;
 var activeItem = false;
 
+pointsCat.style.marginLeft= (50 + points)+"%";
 
 function removeClass(target){
 
@@ -160,3 +161,4 @@ var needsClick = (function () {
 
 
 needsClick.init();
+
