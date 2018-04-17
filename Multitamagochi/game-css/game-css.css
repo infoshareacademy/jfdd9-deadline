@@ -30,6 +30,12 @@ body{
     margin-bottom: 1rem;
 }
 
+
+#cats .needs > img{
+    width: 65%;
+    height: auto;
+    padding: 19px;
+}
 #cats{
     display: flex;
     justify-content: space-around;
