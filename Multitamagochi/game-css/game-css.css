@@ -85,6 +85,7 @@ td {
     width: 50%;
     height: 2rem;
     background: linear-gradient(to right, darkred, forestgreen);
+    border-radius: 5px;
 }
 #points img{
     height:100%;
@@ -94,6 +95,7 @@ td {
     width: 50%;
     height: 2rem;
     border: #5c98bd 0.1rem solid;
+    border-radius: 5px;
 }
 
 
