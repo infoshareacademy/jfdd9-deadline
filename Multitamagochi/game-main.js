@@ -53,6 +53,9 @@ function randomNeed() {
 }
 
 
+
+
+
 function needRandomizer(tim) {
     setInterval(randomNeed, tim)
 }
