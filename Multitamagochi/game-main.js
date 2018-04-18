@@ -18,7 +18,7 @@ var clickedItemId;
 var activeItem = false;
 var timeV = 0;
 var timeEnd = 120;
-var gameInterval =
+var gameInterval;
 
 
 
@@ -35,7 +35,7 @@ function mediaQ(mediaq){
         cat1.style.display = 'block';
         cat2.style.display = 'block';
     }
-}
+};
 
 var mediaq = window.matchMedia("(max-width: 550px)");
 mediaQ(mediaq); // Call listener function at run time
