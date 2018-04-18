@@ -106,7 +106,7 @@ function randomNeed() {
         needsNode[catIndex].style.visibility ='hidden';
         decreasePoints();
 
-    }, 4000);
+    }, 2500); //czas wyświetlania potrzeby
     return randomNeedIndex;
 }
 
@@ -114,7 +114,7 @@ function needRandomizer(tim) {
     gameInterval = setInterval(randomNeed, tim)
 }
 
-needRandomizer(5000);
+needRandomizer(4000); //co ile czasu losujemy
 
 
 
