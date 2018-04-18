@@ -3,7 +3,7 @@ var mainNode = document.getElementById('main');
 var pointsNode = document.getElementById('points');
 var pointsCat = document.getElementById('pointsImg');
 var timerBar = document.getElementById('timerBar')
-var catsNode = document.getElementById('cats');
+var catsNode = document.querySelectorAll('#cats div');
 var needsNode = document.querySelectorAll('.needs');
 var needs = ['food', 'hand', 'brush', 'wool'];
 var points = 0;
@@ -17,6 +17,28 @@ var itemsNode = document.getElementById('items');
 var clickedItemId;
 var activeItem = false;
 var timeV = 0;
+
+
+
+
+function mediaQ(mediaq){
+    var cat = document.getElementById('cat4');
+    var cat2 = document.getElementById('cat3')
+    if (mediaq.matches){ //If media query matches
+        console.log(catsNode);
+        cat.style.display = 'none';
+        cat2.style.display = 'none';
+    }
+    else{
+        cat1.style.display = 'block';
+        cat2.style.display = 'block';
+    }
+}
+
+var mediaq = window.matchMedia("(max-width: 550px)");
+mediaQ(mediaq); // Call listener function at run time
+mediaq.addListener(mediaQ); // Attach listener function on state changes
+
 
 countPoints();
 
@@ -38,7 +60,7 @@ function countPoints(){
     console.log(points);
     pointsCat.style.marginLeft= (50 + points)+"%"
 }
-dodawanie punktów
+// dodawanie punktów
 function addPoints(){
     points +=1;
     countPoints() ;
