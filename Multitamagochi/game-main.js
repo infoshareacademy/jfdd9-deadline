@@ -19,6 +19,9 @@ var activeItem = false;
 var timeV = 0;
 
 countPoints();
+
+// kasowanie klas klikniętego targetu i ukrywanie całego diva
+
 function removeClass(target){
 
     activeItem.classList.remove('active_item');
@@ -26,18 +29,21 @@ function removeClass(target){
     activeItem = false;
     target.className = 'needs';
     target.innerText = "";
-    needsNode[catIndex].style.visibility ='hidden'
+    needsNode[catIndex].style.visibility ='hidden';
 
 }
+//przesuwanie kota po skali punktów
 
 function countPoints(){
     console.log(points);
     pointsCat.style.marginLeft= (50 + points)+"%"
 }
+dodawanie punktów
 function addPoints(){
     points +=1;
     countPoints() ;
 }
+// odejmowanie punktów
 function decreasePoints(){
     points -=1;
     countPoints();
