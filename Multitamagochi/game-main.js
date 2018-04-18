@@ -2,8 +2,8 @@ var gameBox = document.getElementById('game');
 var mainNode = document.getElementById('main');
 var pointsNode = document.getElementById('points');
 var pointsCat = document.getElementById('pointsImg');
-var timerBar = document.getElementById('timerBar')
-var catsNode = document.getElementById('cats');
+var timerBar = document.getElementById('timerBar');
+var catsNode = document.querySelectorAll('.cats');
 var needsNode = document.querySelectorAll('.needs');
 var needs = ['food', 'hand', 'brush', 'wool'];
 var points = 0;
@@ -20,6 +20,28 @@ var timeV = 0;
 var timeEnd = 120;
 var gameInterval =
 
+
+
+
+function mediaQ(mediaq){
+    var cat = document.getElementById('cat4');
+    var cat2 = document.getElementById('cat3')
+    if (mediaq.matches){ //If media query matches
+        console.log(catsNode);
+        cat.style.display = 'none';
+        cat2.style.display = 'none';
+    }
+    else{
+        cat1.style.display = 'block';
+        cat2.style.display = 'block';
+    }
+}
+
+var mediaq = window.matchMedia("(max-width: 550px)");
+mediaQ(mediaq); // Call listener function at run time
+mediaq.addListener(mediaQ); // Attach listener function on state changes
+
+
 countPoints();
 
 // kasowanie klas klikniętego targetu i ukrywanie całego diva
@@ -27,10 +49,10 @@ countPoints();
 function removeClass(target){
 
     activeItem.classList.remove('active_item');
-    console.log(activeItem);
+    document.querySelectorAll('.needs').forEach( function(e){
+        e.className = 'needs';
+    });
     activeItem = false;
-    target.className = 'needs';
-    target.innerText = "";
     needsNode[catIndex].style.visibility ='hidden';
 
 }
@@ -97,7 +119,7 @@ function getNumberFromRange(range) {
 function randomNeed() {
     catIndex = getNumberFromRange(4);
     randomNeedIndex = getNumberFromRange(4);
-    needsNode[catIndex].innerHTML = '<img src="img/item-' + needs[randomNeedIndex] + '.png" />';
+    needsNode[catIndex].innerHTML = '<img src="img/item-' + needs[randomNeedIndex] + '.png" draggable="false" />';
     needsNode[catIndex].classList.add(needs[randomNeedIndex]);
     needsNode[catIndex].style.visibility ='visible';
     timeoutId = setTimeout(function () {
@@ -150,25 +172,27 @@ var needsClick = (function () {
             })
         });
 // listener dla potrzeb
-        Object.values(needsNode).map( function(e){ e.addEventListener('click', function () {
+        Object.values(catsNode).map( function(e){ e.addEventListener('click', function () {
+            var needsElement = this.parentNode.querySelector('.needs');
             console.log(clickedItemId);
             console.log(needs[randomNeedIndex]);
             if (activeItem === false) {
                 return
             }
 
-            if (('needs ' + clickedItemId) === this.className) {
+            if (('needs ' + clickedItemId) === needsElement.className) {
                 console.log('success');
-                removeClass(e);
+                removeClass(needsElement);
                 clickedItemId = "";
                 addPoints();
                 clearTimeout(timeoutId);
 
-            } else if (('needs ' + clickedItemId) !== this.className) {
+            } else if (('needs ' + clickedItemId) !== needsElement.className) {
                 console.log('fail');
-                removeClass(e);
+                removeClass(needsElement);
                 decreasePoints();
                 clearTimeout(timeoutId);
+
             } else {
                 console.log('dun click me bro')
             }
