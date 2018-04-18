@@ -28,6 +28,7 @@ body{
     width: 7rem;
     height: 7rem;
     margin-bottom: 1rem;
+    visibility: hidden;
 }
 
 
@@ -93,6 +94,7 @@ td {
 #points img{
     height:100%;
     width:auto;
+    transition: margin-left 0.75s;
 }
 #timer {
     width: 48%;

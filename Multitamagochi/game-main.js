@@ -1,25 +1,54 @@
 var gameBox = document.getElementById('game');
 var mainNode = document.getElementById('main');
 var pointsNode = document.getElementById('points');
+var pointsCat = document.getElementById('pointsImg');
+var timerBar = document.getElementById('timerBar')
 var catsNode = document.getElementById('cats');
-var foodNode = document.getElementById('food');
-var handNode = document.getElementById('hand');
-var brushNode = document.getElementById('brush');
-var woolNode = document.getElementById('wool');
 var needsNode = document.querySelectorAll('.needs');
 var needs = ['food', 'hand', 'brush', 'wool'];
 var points = 0;
-
 var height = 2;
 var width = 2;
 var randomNeedIndex;
 var timeNode = document.getElementById('timer');
 var catIndex;
-/*licznik czasu */
-
-var timeV = 0;
 var timeoutId;
+var itemsNode = document.getElementById('items');
+var clickedItemId;
+var activeItem = false;
+var timeV = 0;
 
+countPoints();
+
+// kasowanie klas klikniętego targetu i ukrywanie całego diva
+
+function removeClass(target){
+
+    activeItem.classList.remove('active_item');
+    console.log(activeItem);
+    activeItem = false;
+    target.className = 'needs';
+    target.innerText = "";
+    needsNode[catIndex].style.visibility ='hidden';
+
+}
+//przesuwanie kota po skali punktów
+
+function countPoints(){
+    console.log(points);
+    pointsCat.style.marginLeft= (50 + points)+"%"
+}
+// dodawanie punktów
+function addPoints(){
+    points +=1;
+    countPoints() ;
+}
+// odejmowanie punktów
+function decreasePoints(){
+    points -=1;
+    countPoints();
+}
+/*licznik czasu */
 var time = (function timer() {
     setInterval(function () {
         timeV += 1;
@@ -44,11 +73,12 @@ function randomNeed() {
     randomNeedIndex = getNumberFromRange(4);
     needsNode[catIndex].innerHTML = '<img src="img/item-' + needs[randomNeedIndex] + '.png" />';
     needsNode[catIndex].classList.add(needs[randomNeedIndex]);
+    needsNode[catIndex].style.visibility ='visible';
     timeoutId = setTimeout(function () {
         needsNode[catIndex].className = 'needs';
         needsNode[catIndex].innerText = '';
-        points -=1;
-        pointsNode.innerText = points;
+        needsNode[catIndex].style.visibility ='hidden';
+        decreasePoints();
 
     }, 4000);
     return randomNeedIndex;
@@ -64,9 +94,7 @@ needRandomizer(5000);
 
 // dodawanie eventlistenera do itemów
 var needsClick = (function () {
-    var itemsNode = document.getElementById('items');
-    var clickedItemId;
-    var activeItem = false;
+
 
 // listener dla itemów
     function init (catIndex) {
@@ -105,24 +133,15 @@ var needsClick = (function () {
 
             if (('needs ' + clickedItemId) === this.className) {
                 console.log('success');
-                activeItem.classList.remove('active_item');
-                activeItem = false;
+                removeClass(e);
                 clickedItemId = "";
-                this.className = 'needs';
-                this.innerText = '';
-                points += 1;
-                pointsNode.innerText = points;
+                addPoints();
                 clearTimeout(timeoutId);
 
             } else if (('needs ' + clickedItemId) !== this.className) {
                 console.log('fail');
-                activeItem.classList.remove('active_item');
-                console.log(activeItem);
-                activeItem = false;
-                this.className = 'needs';
-                this.innerText = "";
-                points -= 1;
-                pointsNode.innerText = points;
+                removeClass(e);
+                decreasePoints();
                 clearTimeout(timeoutId);
             } else {
                 console.log('dun click me bro')
@@ -139,4 +158,5 @@ var needsClick = (function () {
 })();
 
 
-needsClick.init(3);
+needsClick.init();
+
