@@ -17,6 +17,7 @@ var itemsNode = document.getElementById('items');
 var clickedItemId;
 var activeItem = false;
 var timeV = 0;
+var timeEnd = 120;
 var gameInterval =
 
 countPoints();
@@ -55,8 +56,8 @@ function decreasePoints(){
 var time = (function timer() {
     var intervalTimer = setInterval(function () {
         timeV += 1;
-        timerBar.style.width= Math.min(9 + width/timeV + timeV, 100)+"%";
-        if (timeV === 120) {
+        timerBar.style.width=(9+ timeV*(91/timeEnd))+"%";
+        if (timeV === timeEnd) {
            // timeV = 0;
             endGame();
             clearInterval(intervalTimer)
@@ -80,7 +81,7 @@ function endGame() {
         gameBox.innerHTML = "You LOSE!"
     }
 
-    if(timeV === 120) {
+    if(timeV === timeEnd) {
         gameBox.innerHTML = "Time OUT!"
         clearInterval(gameInterval);
     }
