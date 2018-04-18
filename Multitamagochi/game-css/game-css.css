@@ -87,9 +87,9 @@ td {
 #points {
     border: #e46140 0.1rem solid;
     width: 48%;
-    height: 2rem;
+    height: 3rem;
     background: linear-gradient(to right, darkred, forestgreen);
-    border-radius: 25px;
+    border-radius: 3rem;
 }
 #points img{
     height:100%;
@@ -98,9 +98,9 @@ td {
 }
 #timer {
     width: 48%;
-    height: 2rem;
+    height: 3rem;
     border: #5c98bd 0.1rem solid;
-    border-radius: 25px;
+    border-radius: 3rem;
 }
 
 
