@@ -11,7 +11,6 @@ var height = 2;
 var width = 2;
 var randomNeedIndex;
 var timeNode = document.getElementById('timer');
-var catIndex;
 var timeoutId;
 var itemsNode = document.getElementById('items');
 var clickedItemId;
@@ -38,7 +37,7 @@ function countPoints(){
     console.log(points);
     pointsCat.style.marginLeft= (50 + points)+"%"
 }
-dodawanie punktów
+// dodawanie punktów
 function addPoints(){
     points +=1;
     countPoints() ;
@@ -69,7 +68,7 @@ function getNumberFromRange(range) {
 
 /* losowanie potrzeby*/
 function randomNeed() {
-    catIndex = getNumberFromRange(4);
+    var catIndex = getNumberFromRange(4);
     randomNeedIndex = getNumberFromRange(4);
     needsNode[catIndex].innerHTML = '<img src="img/item-' + needs[randomNeedIndex] + '.png" />';
     needsNode[catIndex].classList.add(needs[randomNeedIndex]);
