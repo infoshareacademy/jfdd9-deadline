@@ -55,8 +55,8 @@ function decreasePoints(){
 var time = (function timer() {
     var intervalTimer = setInterval(function () {
         timeV += 1;
-        timeNode.innerHTML = timeV + 'seconds';
-        if (timeV === 5) {
+        timerBar.style.width= (9 + timeV)+"%";
+        if (timeV === 120) {
            // timeV = 0;
             endGame();
             clearInterval(intervalTimer)
@@ -80,7 +80,7 @@ function endGame() {
         gameBox.innerHTML = "You LOSE!"
     }
 
-    if(timeV === 5) {
+    if(timeV === 120) {
         gameBox.innerHTML = "Time OUT!"
         clearInterval(gameInterval);
     }
