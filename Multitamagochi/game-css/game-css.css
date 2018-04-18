@@ -93,6 +93,7 @@ td {
 #points img{
     height:100%;
     width:auto;
+    transition: margin-left 0.75s;
 }
 #timer {
     width: 50%;
