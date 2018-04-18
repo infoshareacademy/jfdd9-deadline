@@ -17,6 +17,7 @@ var itemsNode = document.getElementById('items');
 var clickedItemId;
 var activeItem = false;
 var timeV = 0;
+var gameInterval =
 
 countPoints();
 
@@ -36,7 +37,8 @@ function removeClass(target){
 
 function countPoints(){
     console.log(points);
-    pointsCat.style.marginLeft= (50 + points)+"%"
+    pointsCat.style.marginLeft= (45 + points)+"%";
+    endGame();
 }
 // dodawanie punktów
 function addPoints(){
@@ -48,19 +50,42 @@ function decreasePoints(){
     points -=1;
     countPoints();
 }
+
 /*licznik czasu */
 var time = (function timer() {
-    setInterval(function () {
+    var intervalTimer = setInterval(function () {
         timeV += 1;
         timeNode.innerHTML = timeV + 'seconds';
-        if (timeV === 10) {
-            timeV = 0;
+        if (timeV === 5) {
+           // timeV = 0;
+            endGame();
+            clearInterval(intervalTimer)
         }
 
     }, 1000);
     return timeV;
 
 })();
+
+function endGame() {
+    //stopTime() {
+    //    albo max time === 120s
+    //    albo |points| = 45
+
+    // }
+    if(points === 45) {
+        gameBox.innerHTML = "You WON!"
+    }
+    if (points === -45) {
+        gameBox.innerHTML = "You LOSE!"
+    }
+
+    if(timeV === 5) {
+        gameBox.innerHTML = "Time OUT!"
+        clearInterval(gameInterval);
+    }
+
+}
 
 /* losowanie liczb z zakresu range*/
 function getNumberFromRange(range) {
@@ -85,7 +110,7 @@ function randomNeed() {
 }
 
 function needRandomizer(tim) {
-    setInterval(randomNeed, tim)
+    gameInterval = setInterval(randomNeed, tim)
 }
 
 needRandomizer(5000);
