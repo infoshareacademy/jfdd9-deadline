@@ -55,7 +55,7 @@ function decreasePoints(){
 var time = (function timer() {
     var intervalTimer = setInterval(function () {
         timeV += 1;
-        timerBar.style.width= (9 + timeV)+"%";
+        timerBar.style.width= Math.min(9 + width/timeV + timeV, 100)+"%";
         if (timeV === 120) {
            // timeV = 0;
             endGame();
