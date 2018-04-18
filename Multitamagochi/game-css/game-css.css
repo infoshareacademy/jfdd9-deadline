@@ -3,9 +3,10 @@ body{
 }
 
 #game{
-    /*border: 5px solid yellow;*/
     width: 90vw;
-    margin: 10px auto;
+    margin: 1rem auto;
+    max-width: 800px;
+    box-shadow: -3px 5px 14px 3px #0202022e;
 }
 
 .game-info{
@@ -40,17 +41,17 @@ body{
 #cats{
     display: flex;
     justify-content: space-around;
-    padding: 10rem 10px 2rem;
+    padding: 1rem;
 }
 
-/*#cats div{*/
-    /*width: 200px;*/
-    /*height: 200px;*/
-/*}*/
+#cats div{
+    box-sizing: border-box;
+    padding: 5px 5px 0;
+}
 
 #cats div img{
-    width: auto;
-    max-height: 200px;
+    width: 100%;
+    height: auto;
 }
 
 #items{
@@ -62,8 +63,6 @@ body{
 
 #items > div{
     /*background-color: #e0785d;*/
-    min-height: 100px;
-    min-width: 99px;
     max-width: 100px;
     padding: 5px;
 }
@@ -86,9 +85,10 @@ td {
 
 #points {
     border: #e46140 0.1rem solid;
-    width: 50%;
-    height: 2rem;
+    width: 48%;
+    height: 3rem;
     background: linear-gradient(to right, darkred, forestgreen);
+    border-radius: 3rem;
 }
 #points img{
     height:100%;
@@ -96,9 +96,10 @@ td {
     transition: margin-left 0.75s;
 }
 #timer {
-    width: 50%;
-    height: 2rem;
+    width: 48%;
+    height: 3rem;
     border: #5c98bd 0.1rem solid;
+    border-radius: 3rem;
 }
 
 
