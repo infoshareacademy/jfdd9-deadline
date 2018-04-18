@@ -57,7 +57,7 @@ var time = (function timer() {
     var intervalTimer = setInterval(function () {
         timeV += 1;
         timerBar.style.width=(9+ timeV*(91/timeEnd))+"%";
-        if (timeV === timeEnd) {
+        if (timeV === timeEnd+1) {
            // timeV = 0;
             endGame();
             clearInterval(intervalTimer)
@@ -81,7 +81,7 @@ function endGame() {
         gameBox.innerHTML = "You LOSE!"
     }
 
-    if(timeV === timeEnd) {
+    if(timeV === timeEnd+1) {
         gameBox.innerHTML = "Time OUT!"
         clearInterval(gameInterval);
     }
