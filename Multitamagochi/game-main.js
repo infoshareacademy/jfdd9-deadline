@@ -71,7 +71,7 @@ function getNumberFromRange(range) {
 function randomNeed() {
     catIndex = getNumberFromRange(4);
     randomNeedIndex = getNumberFromRange(4);
-    needsNode[catIndex].innerHTML = '<img src="img/item-' + needs[randomNeedIndex] + '.png" />';
+    needsNode[catIndex].innerHTML = '<img src="img/item-' + needs[randomNeedIndex] + '.png" draggable="false" />';
     needsNode[catIndex].classList.add(needs[randomNeedIndex]);
     needsNode[catIndex].style.visibility ='visible';
     timeoutId = setTimeout(function () {
