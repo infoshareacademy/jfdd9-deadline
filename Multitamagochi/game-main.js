@@ -233,3 +233,32 @@ function startGame(reset){
 }
 startGame(false);
 
+var btnPause = document.getElementById('btn-stop-start-game');
+
+btnPause.addEventListener('click', function(e){
+
+    if(btnPause.classList.contains('stop')){
+        this.innerHTML = 'START';
+        this.classList.remove('stop');
+        this.classList.add('start');
+        pauseGame();
+    }
+    else{
+        this.innerHTML = 'STOP';
+        this.classList.remove('start');
+        this.classList.add('stop');
+        startGame();
+    }
+});
+
+function pauseGame() {
+    clearInterval(intervalTimer); //zatrzymanie glownego licznika czasu gdy
+    clearInterval(timeoutId); //zatrzymanie licznika dla realizacji potrzeby
+    clearInterval(gameInterval);
+}
+
+var btnRestart = document.getElementById('btn-restart-game');
+
+btnRestart.addEventListener('click', function () {
+   reset();
+});

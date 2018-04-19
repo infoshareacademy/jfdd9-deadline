@@ -9,49 +9,53 @@
 
     <title>Multitamagochi</title>
     <link rel="stylesheet" href="game-css/game-css.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
+          integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 
 </head>
 <body>
-
-<div id="game">
-<div class="game-info">
-    <div id="points"><img id="pointsImg" src="img/happy-kitty.png" /></div>
-    <div id="timer"><div id="timerBar"></div></div>
-</div>
-
-    <div id="main">
-        <div id="cats">
-            <div id="cat1">
-                <div class ="needs"></div>
-                <img class ="cats" src="img/kitty1.png" draggable="false"/>
-            </div>
-            <div id="cat2">
-                <div class ="needs"></div>
-                <img class ="cats" src="img/kitty2.png" draggable="false"/>
-            </div>
-            <div id="cat3">
-                <div class ="needs"></div>
-                <img class ="cats" src="img/kitty3.png" draggable="false"/>
-            </div>
-            <div id="cat4">
-                <div class ="needs"></div>
-                <img class ="cats" src="img/kitty4.png" draggable="false"/>
-            </div>
+<div class="container">
+    <button id="btn-restart-game">RESTART</button>
+    <button id ='btn-stop-start-game' class="stop">PAUSE</button>
+    <div style="clear:both"></div>
+    <div id="game">
+        <div class="game-info">
+            <div id="points"><img id="pointsImg" src="img/happy-kitty.png" /></div>
+            <div id="timer"><div id="timerBar"></div></div>
         </div>
 
+        <div id="main">
+            <div id="cats">
+                <div id="cat1">
+                    <div class ="needs"></div>
+                    <img class ="cats" src="img/kitty1.png" draggable="false"/>
+                </div>
+                <div id="cat2">
+                    <div class ="needs"></div>
+                    <img class ="cats" src="img/kitty2.png" draggable="false"/>
+                </div>
+                <div id="cat3">
+                    <div class ="needs"></div>
+                    <img class ="cats" src="img/kitty3.png" draggable="false"/>
+                </div>
+                <div id="cat4">
+                    <div class ="needs"></div>
+                    <img class ="cats" src="img/kitty4.png" draggable="false"/>
+                </div>
+            </div>
 
+
+        </div>
+        <div id="items">
+            <div><img id="food" class="item" src="img/item-food.png" draggable="false"/></div>
+            <div><img id="hand" class="item" src="img/item-hand.png" draggable="false"/></div>
+            <div><img id="brush" class="item" src="img/item-brush.png" draggable="false"/></div>
+            <div><img id="wool" class="item" src="img/item-wool.png" draggable="false"/></div>
+        </div>
     </div>
-    <div id="items">
-        <div><img id="food" class="item" src="img/item-food.png" draggable="false"/></div>
-        <div><img id="hand" class="item" src="img/item-hand.png" draggable="false"/></div>
-        <div><img id="brush" class="item" src="img/item-brush.png" draggable="false"/></div>
-        <div><img id="wool" class="item" src="img/item-wool.png" draggable="false"/></div>
-    </div>
-
-
-    <script src="game-main.js"></script>
-
 </div>
+
+<script src="game-main.js"></script>
 
 </body>
 </html>
