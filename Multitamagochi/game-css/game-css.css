@@ -4,7 +4,7 @@ body{
 .container{
     width: 90vw;
     margin: 1rem auto;
-    max-width: 800px;
+    max-width: 900px;
 }
 #btn-restart-game{
     display: block;

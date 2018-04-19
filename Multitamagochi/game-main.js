@@ -22,7 +22,6 @@ var gameInterval;
 
 
 
-
 function mediaQ(mediaq){
     var cat = document.getElementById('cat4');
     var cat2 = document.getElementById('cat3')
@@ -75,8 +74,9 @@ function decreasePoints(){
 }
 
 /*licznik czasu */
+var intervalTimer
 var time = (function timer() {
-    var intervalTimer = setInterval(function () {
+    intervalTimer = setInterval(function () {
         timeV += 1;
         timerBar.style.width=(9+ timeV*(91/timeEnd))+"%";
         if (timeV === timeEnd+1) {
@@ -87,7 +87,6 @@ var time = (function timer() {
 
     }, 1000);
     return timeV;
-
 })();
 
 function endGame() {
@@ -210,17 +209,32 @@ var needsClick = (function () {
 
 needsClick.init();
 
+var btnPause = document.getElementById('btn-stop-start-game');
+
+btnPause.addEventListener('click', function(e){
+
+    if(btnPause.classList.contains('stop')){
+        this.innerHTML = 'START';
+        this.classList.remove('stop');
+        this.classList.add('start');
+        pauseGame();
+    }
+    else{
+        this.innerHTML = 'STOP';
+        this.classList.remove('start');
+        this.classList.add('stop');
+        startGame();
+    }
+});
+
+function pauseGame() {
+    clearInterval(intervalTimer); //zatrzymanie glownego licznika czasu gdy
+    clearInterval(timeoutId); //zatrzymanie licznika dla realizacji potrzeby
+    clearInterval(gameInterval);
+}
 
 var btnRestart = document.getElementById('btn-restart-game');
 
 btnRestart.addEventListener('click', function () {
-   restartGame();
+   reset();
 });
-
-function restartGame(){
-    window.location.reload();
-}
-
-
-
-
