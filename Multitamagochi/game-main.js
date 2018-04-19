@@ -210,3 +210,17 @@ var needsClick = (function () {
 
 needsClick.init();
 
+
+var btnRestart = document.getElementById('btn-restart-game');
+
+btnRestart.addEventListener('click', function () {
+   restartGame();
+});
+
+function restartGame(){
+    window.location.reload();
+}
+
+
+
+
