@@ -219,9 +219,11 @@ var itemClickFunction = function (event) {
         clearTimeout(timeoutId);
         startGame(true);
         points = 0;
+        countPoints();
         timeV = 0;
-
-
+        timerBar.style.width = (9 + timeV * (91 / timeEnd)) + "%";
+        needsNode[catIndex].style.visibility = 'hidden';
+        needsNode[catIndex].className = 'needs';
     }
 function startGame(reset){
     countPoints(); //zliczanie punktów
