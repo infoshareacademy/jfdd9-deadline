@@ -252,7 +252,7 @@ btnPause.addEventListener('click', function(e){
 });
 
 function pauseGame() {
-    clearInterval(intervalTimer); //zatrzymanie glownego licznika czasu gdy
+    clearInterval(timeInterval); //zatrzymanie glownego licznika czasu gdy
     clearInterval(timeoutId); //zatrzymanie licznika dla realizacji potrzeby
     clearInterval(gameInterval);
 }
