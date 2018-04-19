@@ -109,5 +109,20 @@ td {
     width: 9%;
 }
 
+#time-out {
+    height: 100%;
+    width: 100%;
+    background-image:white;
+    visibility: hidden;
+    display:none;
+}
+
+#lose {
+    height: 100%;
+    width: 100%;
+    background-image:white;
+    visibility: hidden;
+    display:none;
+}
 
 

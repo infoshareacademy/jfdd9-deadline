@@ -5,6 +5,7 @@ var pointsCat = document.getElementById('pointsImg');
 var timerBar = document.getElementById('timerBar');
 var catsNode = document.querySelectorAll('.cats');
 var needsNode = document.querySelectorAll('.needs');
+var timeOut = document.getElementById('time-out')
 var needs = ['food', 'hand', 'brush', 'wool'];
 var points = 0;
 var height = 2;
@@ -17,15 +18,15 @@ var itemsNode = document.getElementById('items');
 var clickedItemId;
 var activeItem = false;
 var timeV = 0;
-var timeEnd = 120;
-var gameInterval =
+var timeEnd = 60;
+var gameInterval;
 
 
 
 
 function mediaQ(mediaq){
     var cat = document.getElementById('cat4');
-    var cat2 = document.getElementById('cat3')
+    var cat2 = document.getElementById('cat3');
     if (mediaq.matches){ //If media query matches
         console.log(catsNode);
         cat.style.display = 'none';
@@ -100,11 +101,14 @@ function endGame() {
         gameBox.innerHTML = "You WON!"
     }
     if (points === -45) {
-        gameBox.innerHTML = "You LOSE!"
+        gameBox.innerHTML = "You LOSE!";
+
     }
 
     if(timeV === timeEnd+1) {
-        gameBox.innerHTML = "Time OUT!"
+        //gameBox.innerHTML = "Time OUT!"
+        timeOut.style.visibility ='visible';
+        gameBox.style.visibility ='hidden';
         clearInterval(gameInterval);
     }
 
