@@ -14,10 +14,24 @@
 <body>
 
 <div id="game">
+    <div id="time-out">
+        <img class="hidden-img" src="img/alarm-clock.png">
+        <p>Czas upłynął!</p>
+        <p> Kliknij RESET, by spróbować jeszcze raz.</p>
+        <img class="hidden-img" src="img/timeOut-kitty.png">
+    </div>
+    <div id="win">
+        <img class="hidden-img" src="img/win-kitty.png">
+
+    </div>
+    <div id="lose">
+        <img class="hidden-img" src="img/lose-kitty.png">
+        <p>Twoje kotki są nieszczęślice, PRZEGRAŁEŚ!</p>
+        <p>Kliknij RESET, by spróbować jeszcze raz. </p>
+    </div>
+    <div id="board">
 <div class="game-info">
-    <div id="time-out"><img src="img/alarm-clock.png"></div>
-    <div id="win"></div>
-    <div id="lose"><img src="img/sad-kitty.png"></div>
+
     <div id="points"><img id="pointsImg" src="img/happy-kitty.png" /></div>
     <div id="timer"><div id="timerBar"></div></div>
 </div>
@@ -49,6 +63,7 @@
         <div><img id="hand" class="item" src="img/item-hand.png" draggable="false"/></div>
         <div><img id="brush" class="item" src="img/item-brush.png" draggable="false"/></div>
         <div><img id="wool" class="item" src="img/item-wool.png" draggable="false"/></div>
+    </div>
     </div>
 
 

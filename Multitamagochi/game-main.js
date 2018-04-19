@@ -5,7 +5,10 @@ var pointsCat = document.getElementById('pointsImg');
 var timerBar = document.getElementById('timerBar');
 var catsNode = document.querySelectorAll('.cats');
 var needsNode = document.querySelectorAll('.needs');
-var timeOut = document.getElementById('time-out')
+var timeOut = document.getElementById('time-out');
+var win = document.getElementById('win');
+var lose = document.getElementById('lose');
+var board = document.getElementById('board');
 var needs = ['food', 'hand', 'brush', 'wool'];
 var points = 0;
 var height = 2;
@@ -18,7 +21,7 @@ var itemsNode = document.getElementById('items');
 var clickedItemId;
 var activeItem = false;
 var timeV = 0;
-var timeEnd = 60;
+var timeEnd = 150;
 var gameInterval;
 
 
@@ -66,12 +69,12 @@ function countPoints(){
 }
 // dodawanie punktów
 function addPoints(){
-    points +=1;
+    points +=3;
     countPoints() ;
 }
 // odejmowanie punktów
 function decreasePoints(){
-    points -=1;
+    points -=3;
     countPoints();
 }
 
@@ -98,17 +101,22 @@ function endGame() {
 
     // }
     if(points === 45) {
-        gameBox.innerHTML = "You WON!"
+       // gameBox.innerHTML = "You WON!"
+        win.style.display ='flex';
+        board.style.display = 'none';
+        clearInterval(gameInterval);
     }
     if (points === -45) {
-        gameBox.innerHTML = "You LOSE!";
-
+      //  gameBox.innerHTML = "You LOSE!";
+        lose.style.display ='flex';
+        board.style.display ='none';
+        clearInterval(gameInterval);
     }
 
     if(timeV === timeEnd+1) {
         //gameBox.innerHTML = "Time OUT!"
-        timeOut.style.visibility ='visible';
-        gameBox.style.visibility ='hidden';
+        timeOut.style.display ='flex';
+        board.style.display ='none';
         clearInterval(gameInterval);
     }
 
