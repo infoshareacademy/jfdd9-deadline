@@ -32,7 +32,7 @@ function mediaQ(mediaq){
         cat2.style.display = 'none';
     }
     else{
-        cat1.style.display = 'block';
+        cat.style.display = 'block';
         cat2.style.display = 'block';
     }
 };
