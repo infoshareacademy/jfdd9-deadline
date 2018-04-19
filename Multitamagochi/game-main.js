@@ -19,23 +19,25 @@
     var gameInterval;
 
 
-    function mediaQ(mediaq) {
-        var cat = document.getElementById('cat4');
-        var cat2 = document.getElementById('cat3');
-        if (mediaq.matches) { //If media query matches
-            console.log(catsNode);
-            cat.style.display = 'none';
-            cat2.style.display = 'none';
-        }
-        else {
-            cat1.style.display = 'block';
-            cat2.style.display = 'block';
-        }
-    }
 
-    var mediaq = window.matchMedia("(max-width: 550px)");
-    mediaQ(mediaq); // Call listener function at run time
-    mediaq.addListener(mediaQ); // Attach listener function on state changes
+
+function mediaQ(mediaq){
+    var cat = document.getElementById('cat4');
+    var cat2 = document.getElementById('cat3')
+    if (mediaq.matches){ //If media query matches
+        console.log(catsNode);
+        cat.style.display = 'none';
+        cat2.style.display = 'none';
+    }
+    else{
+        cat.style.display = 'block';
+        cat2.style.display = 'block';
+    }
+};
+
+var mediaq = window.matchMedia("(max-width: 550px)");
+mediaQ(mediaq); // Call listener function at run time
+mediaq.addListener(mediaQ); // Attach listener function on state changes
 
 
 // kasowanie klas klikniętego targetu i ukrywanie całego diva
