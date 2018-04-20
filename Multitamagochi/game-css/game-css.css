@@ -113,7 +113,6 @@ td {
 }
 
 #time-out {
-    height: 50vh;
     width: 100%;
     border: #a5cd93 0.1rem solid;
     background-color: #516e4c;
@@ -126,7 +125,7 @@ td {
 }
 
 #lose {
-    height: 50vh;
+
     width: 100%;
     border: #a5cd93 0.1rem solid;
     background-color: #516e4c;
@@ -140,7 +139,6 @@ td {
 }
 
 #win {
-    height: 50vh;
     width: 100%;
     border: #a5cd93 0.1rem solid;
     background-color: #516e4c;
