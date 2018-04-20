@@ -238,7 +238,14 @@ var itemClickFunction = function (event) {
         timerBar.style.width = (9 + timeV * (91 / timeEnd)) + "%";
         needsNode[catIndex].style.visibility = 'hidden';
         needsNode[catIndex].className = 'needs';
-        lose.style.display ='none';
+        btnPause.innerHTML = 'STOP';
+        btnPause.classList.remove('start');
+        btnPause.classList.add('stop');
+        board.style.display = 'block';
+        lose.style.display = 'none';
+        timeOut.style.display = 'none';
+        win.style.display = 'none';
+        board.style.pointerEvents = '';
 
     }
 function startGame(reset){
@@ -247,7 +254,6 @@ function startGame(reset){
     time(); //włączanie czasu
     needsClick.init(null,reset);
 }
-startGame(false);
 
 var btnPause = document.getElementById('btn-stop-start-game');
 
@@ -257,19 +263,25 @@ btnPause.addEventListener('click', function(e){
         this.innerHTML = 'START';
         this.classList.remove('stop');
         this.classList.add('start');
+        board.style.pointerEvents = 'none';
         pauseGame();
+
     }
     else{
         this.innerHTML = 'STOP';
         this.classList.remove('start');
         this.classList.add('stop');
-        startGame();
+        needsNode[catIndex].style.visibility = 'hidden';
+        needsNode[catIndex].className = 'needs';
+        board.style.pointerEvents = '';
+
+        startGame(false);
     }
 });
 
 function pauseGame() {
     clearInterval(timeInterval); //zatrzymanie glownego licznika czasu gdy
-    clearInterval(timeoutId); //zatrzymanie licznika dla realizacji potrzeby
+    clearTimeout(timeoutId); //zatrzymanie licznika dla realizacji potrzeby
     clearInterval(gameInterval);
 }
 
@@ -278,3 +290,5 @@ var btnRestart = document.getElementById('btn-restart-game');
 btnRestart.addEventListener('click', function () {
    reset();
 });
+    startGame(false);
+
