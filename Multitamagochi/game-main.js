@@ -35,6 +35,7 @@ function mediaQ(mediaq){
     }
 }
 
+
 var mediaq = window.matchMedia("(max-width: 550px)");
 mediaQ(mediaq); // Call listener function at run time
 mediaq.addListener(mediaQ); // Attach listener function on state changes
