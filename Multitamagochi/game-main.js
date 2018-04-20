@@ -213,6 +213,7 @@ var itemClickFunction = function (event) {
         }
     })();
 
+
     function reset(){
         clearInterval(timeInterval);
         clearInterval(gameInterval);
@@ -238,13 +239,13 @@ var btnPause = document.getElementById('btn-stop-start-game');
 btnPause.addEventListener('click', function(e){
 
     if(btnPause.classList.contains('stop')){
-        this.innerHTML = 'START';
+        this.innerHTML = '<i class="fas fa-pause"></i>';
         this.classList.remove('stop');
         this.classList.add('start');
         pauseGame();
     }
     else{
-        this.innerHTML = 'STOP';
+        this.innerHTML = '<i class="fas fa-play"></i>';
         this.classList.remove('start');
         this.classList.add('stop');
         startGame();
@@ -252,9 +253,9 @@ btnPause.addEventListener('click', function(e){
 });
 
 function pauseGame() {
-    clearInterval(timeInterval); //zatrzymanie glownego licznika czasu gdy
-    clearInterval(timeoutId); //zatrzymanie licznika dla realizacji potrzeby
-    clearInterval(gameInterval);
+    clearInterval(timeInterval); // główny licznik czasu trwania gry
+    clearInterval(timeoutId); //czas trwania potrzeby
+    clearInterval(gameInterval); // pojawianie się potrzeb
 }
 
 var btnRestart = document.getElementById('btn-restart-game');
