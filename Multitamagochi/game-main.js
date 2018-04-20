@@ -224,6 +224,13 @@ var itemClickFunction = function (event) {
         timerBar.style.width = (9 + timeV * (91 / timeEnd)) + "%";
         needsNode[catIndex].style.visibility = 'hidden';
         needsNode[catIndex].className = 'needs';
+        btnPause.innerHTML = 'STOP';
+        btnPause.classList.remove('start');
+        btnPause.classList.add('stop');
+        board.style.display = 'block';
+        lose.style.display = 'none';
+        timeOut.style.display = 'none';
+        win.style.display = 'none';
     }
 function startGame(reset){
     countPoints(); //zliczanie punktów
