@@ -19,10 +19,32 @@
     <button id ='btn-stop-start-game' class="stop">PAUSE</button>
     <div style="clear:both"></div>
     <div id="game">
-        <div class="game-info">
-            <div id="points"><img id="pointsImg" src="img/happy-kitty.png" /></div>
-            <div id="timer"><div id="timerBar"></div></div>
-        </div>
+
+<div id="game">
+    <div id="time-out">
+        <img class="hidden-img" src="img/alarm-clock.png">
+        <p class="komunikat">CZAS UPŁYNĄŁ!</p>
+        <img class="hidden-img" src="img/timeOut-kitty.png">
+        <p class="komunikat-restart"> Kliknij RESTART, aby spróbować jeszcze raz.</p>
+
+    </div>
+    <div id="win">
+        <img class="hidden-img" src="img/win-kitty.png">
+        <p class="komunikat">Twoje kotki są zadowolone, WYGRAŁEŚ!</p>
+        <p class="komunikat-restart">Kliknij RESTART, aby spróbować jeszcze raz.</p>
+
+    </div>
+    <div id="lose">
+        <img class="hidden-img" src="img/lose-kitty.png">
+        <p class="komunikat">Twoje kotki są nieszczęśliwe, PRZEGRAŁEŚ!</p>
+        <p class="komunikat-restart">Kliknij RESTART, aby spróbować jeszcze raz. </p>
+    </div>
+    <div id="board">
+<div class="game-info">
+
+    <div id="points"><img id="pointsImg" src="img/happy-kitty.png" /></div>
+    <div id="timer"><div id="timerBar"></div></div>
+</div>
 
         <div id="main">
             <div id="cats">
@@ -53,9 +75,13 @@
             <div><img id="wool" class="item" src="img/item-wool.png" draggable="false"/></div>
         </div>
     </div>
+    </div>
+
 </div>
 
 <script src="game-main.js"></script>
+
+</div>
 
 </body>
 </html>

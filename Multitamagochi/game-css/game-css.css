@@ -89,7 +89,6 @@ td {
 }
 
 #points {
-    border: #e46140 0.1rem solid;
     width: 48%;
     height: 3rem;
     background: linear-gradient(to right, darkred, forestgreen);
@@ -103,7 +102,6 @@ td {
 #timer {
     width: 48%;
     height: 3rem;
-    border: #5c98bd 0.1rem solid;
     border-radius: 3rem;
     background-color: #5c98bd;
 }
@@ -112,6 +110,64 @@ td {
     background-color: red;
     border-radius: inherit;
     width: 9%;
+}
+
+#time-out {
+    height: 50vh;
+    width: 100%;
+    border: #a5cd93 0.1rem solid;
+    background-color: #516e4c;
+    display:none;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    justify-content:space-around;
+    align-items: center;
+    flex-wrap:wrap;
+}
+
+#lose {
+    height: 50vh;
+    width: 100%;
+    border: #a5cd93 0.1rem solid;
+    background-color: #516e4c;
+    display:none;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#win {
+    height: 50vh;
+    width: 100%;
+    border: #a5cd93 0.1rem solid;
+    background-color: #516e4c;
+    display:none;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hidden-img {
+    display:inline-block;
+    width: 30%;
+    height: auto;
+}
+
+.komunikat-restart{
+    display: inline-block;
+    color: blanchedalmond;
+    align-self: center;
+
+}
+
+.komunikat{
+    font-size: 2.5rem;
+    color: antiquewhite;
 }
 
 
