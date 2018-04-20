@@ -1,22 +1,57 @@
 body{
     margin: 0;
+    font-family: 'Baloo Tamma', cursive;
 }
 .container{
     width: 90vw;
     margin: 1rem auto;
     max-width: 900px;
+    background: #5c98bd;
 }
-#btn-restart-game{
+
+.game-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h1 {
+    display: inline-block;
+    color: #fff;
+    padding-left: 20px;
+    font-size: 1.4em;
+    font-weight: lighter;
+    cursor: default;
+}
+
+#btn-restart-game,
+#btn-stop-start-game{
     display: block;
     float: right;
+    background: #5c98bd;
+    padding: 10px 20px;
+    border: 0;
+    margin: 0.2em;
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
 }
+
+#btn-restart-game:hover,
+#btn-restart-game:focus,
+#btn-stop-start-game:hover,
+#btn-stop-start-game:focus{
+    background: #4686ad;
+    border-radius: 30px;
+    box-shadow: 1px 1px 3px #00000070;
+}
+
 #game{
     box-shadow: -3px 5px 14px 3px #0202022e;
 }
 
 .game-info{
     background: #495059;
-    padding: 0.5rem 2rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     color: #fff;
@@ -103,11 +138,11 @@ td {
     width: 48%;
     height: 3rem;
     border-radius: 3rem;
-    background-color: #5c98bd;
+    background-color: #424242;
 }
 #timerBar {
     height:100%;
-    background-color: red;
+    background-color: #ca3131;
     border-radius: inherit;
     width: 9%;
 }

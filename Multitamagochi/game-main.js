@@ -238,7 +238,7 @@ var itemClickFunction = function (event) {
         timerBar.style.width = (9 + timeV * (91 / timeEnd)) + "%";
         needsNode[catIndex].style.visibility = 'hidden';
         needsNode[catIndex].className = 'needs';
-        btnPause.innerHTML = 'STOP';
+        btnPause.innerHTML = '<i class="fas fa-pause"></i>';
         btnPause.classList.remove('start');
         btnPause.classList.add('stop');
         board.style.display = 'block';
@@ -260,7 +260,7 @@ var btnPause = document.getElementById('btn-stop-start-game');
 btnPause.addEventListener('click', function(e){
 
     if(btnPause.classList.contains('stop')){
-        this.innerHTML = 'START';
+        this.innerHTML = '<i class="fas fa-play"></i>';
         this.classList.remove('stop');
         this.classList.add('start');
         board.style.pointerEvents = 'none';
@@ -268,7 +268,7 @@ btnPause.addEventListener('click', function(e){
 
     }
     else{
-        this.innerHTML = 'STOP';
+        this.innerHTML = '<i class="fas fa-pause"></i>';
         this.classList.remove('start');
         this.classList.add('stop');
         try {
@@ -283,9 +283,9 @@ btnPause.addEventListener('click', function(e){
 });
 
 function pauseGame() {
-    clearInterval(timeInterval); //zatrzymanie glownego licznika czasu gdy
-    clearTimeout(timeoutId); //zatrzymanie licznika dla realizacji potrzeby
-    clearInterval(gameInterval);
+    clearInterval(timeInterval); // główny licznik czasu trwania gry
+    clearInterval(timeoutId); //czas trwania potrzeby
+    clearInterval(gameInterval); // pojawianie się potrzeb
 }
 
 var btnRestart = document.getElementById('btn-restart-game');
