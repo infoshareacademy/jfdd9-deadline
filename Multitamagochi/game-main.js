@@ -271,10 +271,13 @@ btnPause.addEventListener('click', function(e){
         this.innerHTML = 'STOP';
         this.classList.remove('start');
         this.classList.add('stop');
-        needsNode[catIndex].style.visibility = 'hidden';
-        needsNode[catIndex].className = 'needs';
+        try {
+            needsNode[catIndex].style.visibility = 'hidden';
+            needsNode[catIndex].className = 'needs';
+        } catch (e) {
+            // skip
+        }
         board.style.pointerEvents = '';
-
         startGame(false);
     }
 });
