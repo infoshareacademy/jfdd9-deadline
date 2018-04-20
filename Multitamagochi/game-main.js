@@ -50,7 +50,11 @@ mediaq.addListener(mediaQ); // Attach listener function on state changes
             e.className = 'needs';
         });
         activeItem = false;
-        needsNode[catIndex].style.visibility = 'hidden';
+        try {
+            needsNode[catIndex].style.visibility = 'hidden';
+        } catch (e) {
+            // skip
+        }
 
     }
 
@@ -236,8 +240,12 @@ var itemClickFunction = function (event) {
         countPoints();
         timeV = 0;
         timerBar.style.width = (9 + timeV * (91 / timeEnd)) + "%";
-        needsNode[catIndex].style.visibility = 'hidden';
-        needsNode[catIndex].className = 'needs';
+        try {
+            needsNode[catIndex].style.visibility = 'hidden';
+            needsNode[catIndex].className = 'needs';
+        } catch (e) {
+            // skip
+        }
         btnPause.innerHTML = '<i class="fas fa-pause"></i>';
         btnPause.classList.remove('start');
         btnPause.classList.add('stop');
