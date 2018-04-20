@@ -245,6 +245,8 @@ var itemClickFunction = function (event) {
         lose.style.display = 'none';
         timeOut.style.display = 'none';
         win.style.display = 'none';
+        board.style.pointerEvents = '';
+
     }
 function startGame(reset){
     countPoints(); //zliczanie punktów
@@ -261,6 +263,7 @@ btnPause.addEventListener('click', function(e){
         this.innerHTML = 'START';
         this.classList.remove('stop');
         this.classList.add('start');
+        board.style.pointerEvents = 'none';
         pauseGame();
 
     }
@@ -270,6 +273,8 @@ btnPause.addEventListener('click', function(e){
         this.classList.add('stop');
         needsNode[catIndex].style.visibility = 'hidden';
         needsNode[catIndex].className = 'needs';
+        board.style.pointerEvents = '';
+
         startGame(false);
     }
 });
