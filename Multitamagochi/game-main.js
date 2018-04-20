@@ -99,12 +99,16 @@ function decreasePoints(){
         win.style.display ='flex';
         board.style.display = 'none';
         clearInterval(gameInterval);
+        clearInterval(timeInterval);
+        clearTimeout(timeoutId);
     }
     if (points === -45) {
       //  gameBox.innerHTML = "You LOSE!";
         lose.style.display ='flex';
         board.style.display ='none';
         clearInterval(gameInterval);
+        clearInterval(timeInterval);
+        clearTimeout(timeoutId);
     }
 
     if(timeV === timeEnd+1) {
@@ -112,6 +116,8 @@ function decreasePoints(){
         timeOut.style.display ='flex';
         board.style.display ='none';
         clearInterval(gameInterval);
+        clearInterval(timeInterval);
+        clearTimeout(timeoutId);
     }
 
     }
@@ -231,6 +237,8 @@ var itemClickFunction = function (event) {
         timerBar.style.width = (9 + timeV * (91 / timeEnd)) + "%";
         needsNode[catIndex].style.visibility = 'hidden';
         needsNode[catIndex].className = 'needs';
+        lose.style.display ='none';
+
     }
 function startGame(reset){
     countPoints(); //zliczanie punktów
