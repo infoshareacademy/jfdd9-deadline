@@ -1,29 +1,29 @@
-
-
-
-
-    var gameBox = document.getElementById('game');
-    var pointsCat = document.getElementById('pointsImg');
-    var timerBar = document.getElementById('timerBar');
-    var catsNode = document.querySelectorAll('.cats');
-    var needsNode = document.querySelectorAll('.needs');
-    var needs = ['food', 'hand', 'brush', 'wool'];
-    var points = 0;
-    var randomNeedIndex;
-    var catIndex = 0;
-    var timeoutId;
-    var clickedItemId;
-    var activeItem = false;
-    var timeV = 0;
-    var timeEnd = 120;
-    var gameInterval;
+var gameBox = document.getElementById('game');
+var pointsCat = document.getElementById('pointsImg');
+var timerBar = document.getElementById('timerBar');
+var catsNode = document.querySelectorAll('.cats');
+var needsNode = document.querySelectorAll('.needs');
+var timeOut = document.getElementById('time-out');
+var win = document.getElementById('win');
+var lose = document.getElementById('lose');
+var board = document.getElementById('board');
+var needs = ['food', 'hand', 'brush', 'wool'];
+var points = 0;
+var randomNeedIndex;
+var catIndex;
+var timeoutId;
+var clickedItemId;
+var activeItem = false;
+var timeV = 0;
+var timeEnd = 120;
+var gameInterval;
 
 
 
 
 function mediaQ(mediaq){
     var cat = document.getElementById('cat4');
-    var cat2 = document.getElementById('cat3')
+    var cat2 = document.getElementById('cat3');
     if (mediaq.matches){ //If media query matches
         console.log(catsNode);
         cat.style.display = 'none';
@@ -33,7 +33,8 @@ function mediaQ(mediaq){
         cat.style.display = 'block';
         cat2.style.display = 'block';
     }
-};
+}
+
 
 var mediaq = window.matchMedia("(max-width: 550px)");
 mediaQ(mediaq); // Call listener function at run time
@@ -62,16 +63,15 @@ mediaq.addListener(mediaQ); // Attach listener function on state changes
     }
 
 // dodawanie punktów
-    function addPoints() {
-        points += 1;
-        countPoints();
-    }
-
+function addPoints(){
+    points +=3;
+    countPoints() ;
+}
 // odejmowanie punktów
-    function decreasePoints() {
-        points -= 1;
-        countPoints();
-    }
+function decreasePoints(){
+    points -=3;
+    countPoints();
+}
 
     var timeInterval;
     /*licznik czasu */
@@ -94,18 +94,32 @@ mediaq.addListener(mediaQ); // Attach listener function on state changes
         //    albo max time === 120s
         //    albo |points| = 45
 
-        // }
-        if (points === 45) {
-            gameBox.innerHTML = "You WON!"
-        }
-        if (points === -45) {
-            gameBox.innerHTML = "You LOSE!"
-        }
+    // }
+    if(points === 45) {
+       // gameBox.innerHTML = "You WON!"
+        win.style.display ='flex';
+        board.style.display = 'none';
+        clearInterval(gameInterval);
+        clearInterval(timeInterval);
+        clearTimeout(timeoutId);
+    }
+    if (points === -45) {
+      //  gameBox.innerHTML = "You LOSE!";
+        lose.style.display ='flex';
+        board.style.display ='none';
+        clearInterval(gameInterval);
+        clearInterval(timeInterval);
+        clearTimeout(timeoutId);
+    }
 
-        if (timeV === timeEnd + 1) {
-            gameBox.innerHTML = "Time OUT!"
-            clearInterval(gameInterval);
-        }
+    if(timeV === timeEnd+1) {
+        //gameBox.innerHTML = "Time OUT!"
+        timeOut.style.display ='flex';
+        board.style.display ='none';
+        clearInterval(gameInterval);
+        clearInterval(timeInterval);
+        clearTimeout(timeoutId);
+    }
 
     }
 
@@ -213,7 +227,6 @@ var itemClickFunction = function (event) {
         }
     })();
 
-
     function reset(){
         clearInterval(timeInterval);
         clearInterval(gameInterval);
@@ -225,6 +238,15 @@ var itemClickFunction = function (event) {
         timerBar.style.width = (9 + timeV * (91 / timeEnd)) + "%";
         needsNode[catIndex].style.visibility = 'hidden';
         needsNode[catIndex].className = 'needs';
+        btnPause.innerHTML = '<i class="fas fa-pause"></i>';
+        btnPause.classList.remove('start');
+        btnPause.classList.add('stop');
+        board.style.display = 'block';
+        lose.style.display = 'none';
+        timeOut.style.display = 'none';
+        win.style.display = 'none';
+        board.style.pointerEvents = '';
+
     }
 function startGame(reset){
     countPoints(); //zliczanie punktów
@@ -232,23 +254,28 @@ function startGame(reset){
     time(); //włączanie czasu
     needsClick.init(null,reset);
 }
-startGame(false);
 
 var btnPause = document.getElementById('btn-stop-start-game');
 
 btnPause.addEventListener('click', function(e){
 
     if(btnPause.classList.contains('stop')){
-        this.innerHTML = '<i class="fas fa-pause"></i>';
+        this.innerHTML = '<i class="fas fa-play"></i>';
         this.classList.remove('stop');
         this.classList.add('start');
+        board.style.pointerEvents = 'none';
         pauseGame();
+
     }
     else{
-        this.innerHTML = '<i class="fas fa-play"></i>';
+        this.innerHTML = '<i class="fas fa-pause"></i>';
         this.classList.remove('start');
         this.classList.add('stop');
-        startGame();
+        needsNode[catIndex].style.visibility = 'hidden';
+        needsNode[catIndex].className = 'needs';
+        board.style.pointerEvents = '';
+
+        startGame(false);
     }
 });
 
@@ -263,3 +290,5 @@ var btnRestart = document.getElementById('btn-restart-game');
 btnRestart.addEventListener('click', function () {
    reset();
 });
+    startGame(false);
+
