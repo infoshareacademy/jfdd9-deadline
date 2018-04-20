@@ -238,7 +238,6 @@ function startGame(reset){
     time(); //włączanie czasu
     needsClick.init(null,reset);
 }
-startGame(false);
 
 var btnPause = document.getElementById('btn-stop-start-game');
 
@@ -249,18 +248,21 @@ btnPause.addEventListener('click', function(e){
         this.classList.remove('stop');
         this.classList.add('start');
         pauseGame();
+
     }
     else{
         this.innerHTML = 'STOP';
         this.classList.remove('start');
         this.classList.add('stop');
-        startGame();
+        needsNode[catIndex].style.visibility = 'hidden';
+        needsNode[catIndex].className = 'needs';
+        startGame(false);
     }
 });
 
 function pauseGame() {
     clearInterval(timeInterval); //zatrzymanie glownego licznika czasu gdy
-    clearInterval(timeoutId); //zatrzymanie licznika dla realizacji potrzeby
+    clearTimeout(timeoutId); //zatrzymanie licznika dla realizacji potrzeby
     clearInterval(gameInterval);
 }
 
@@ -269,3 +271,5 @@ var btnRestart = document.getElementById('btn-restart-game');
 btnRestart.addEventListener('click', function () {
    reset();
 });
+    startGame(false);
+
