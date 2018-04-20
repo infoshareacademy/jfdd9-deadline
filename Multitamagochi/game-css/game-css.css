@@ -122,6 +122,7 @@ td {
     padding-bottom: 1.5rem;
     justify-content:space-around;
     align-items: center;
+    flex-wrap:wrap;
 }
 
 #lose {
@@ -135,6 +136,7 @@ td {
     justify-content:space-around;
     align-items: center;
     flex-direction: column;
+
 }
 
 #win {
@@ -152,15 +154,14 @@ td {
 
 .hidden-img {
     display:inline-block;
-    width: 20%;
+    width: 30%;
     height: auto;
 }
 
-#time-out p,
-#win p,
-#lose p {
+.komunikat-restart{
     display: inline-block;
     color: blanchedalmond;
+    align-self: flex-end;
 
 }
 

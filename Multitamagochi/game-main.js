@@ -15,7 +15,7 @@ var timeoutId;
 var clickedItemId;
 var activeItem = false;
 var timeV = 0;
-var timeEnd = 120;
+var timeEnd = 6;
 var gameInterval;
 
 
