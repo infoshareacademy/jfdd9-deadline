@@ -97,8 +97,6 @@ function decreasePoints(){
         //stopTime() {
         //    albo max time === 120s
         //    albo |points| = 45
-        var theme = new Audio('mp3/animals020.mp3');
-        var theme1 = new Audio('mp3/Cat-meow-2.mp3');
 
     // }
     if(points === 45) {
@@ -108,7 +106,6 @@ function decreasePoints(){
         clearInterval(gameInterval);
         clearInterval(timeInterval);
         clearTimeout(timeoutId);
-        theme1.play();
     }
     if (points === -45) {
       //  gameBox.innerHTML = "You LOSE!";
@@ -117,7 +114,6 @@ function decreasePoints(){
         clearInterval(gameInterval);
         clearInterval(timeInterval);
         clearTimeout(timeoutId);
-        theme.play();
     }
 
     if(timeV === timeEnd+1) {
@@ -127,7 +123,6 @@ function decreasePoints(){
         clearInterval(gameInterval);
         clearInterval(timeInterval);
         clearTimeout(timeoutId);
-        theme.play();
     }
 
     }
