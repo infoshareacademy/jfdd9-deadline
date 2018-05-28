@@ -98,7 +98,7 @@ function decreasePoints(){
         //    albo max time === 120s
         //    albo |points| = 45
        var theme = new Audio('mp3/mruczenie kota.mp3');
-       var theme1 = new Audio('mp3/animals020.mp3');
+       var theme1 = new Audio('mp3/Cute KITTENS Sing In AUTOTUNE.mp3');
     // }
     if(points === 45) {
        // gameBox.innerHTML = "You WON!"
