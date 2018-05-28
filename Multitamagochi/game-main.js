@@ -88,17 +88,16 @@ var time = function timer() {
             clearInterval(timeInterval)
         }
 
-    }, 1000);
-    return timeV;
-};
-var theme = new Audio('mp3/Cat-meow-2.mp3');
-var theme1 = new Audio('mp3/animals020.mp3');
+        }, 1000);
+        return timeV;
+    };
+var theme = new Audio('mp3/mruczenie kota.mp3');
+var theme1 = new Audio('mp3/Cute KITTENS Sing In AUTOTUNE.mp3');
 function endGame() {
-    //stopTime() {
-    //    albo max time === 120s
-    //    albo |points| = 45
-
-    // }
+        //stopTime() {
+        //    albo max time === 120s
+        //    albo |points| = 45
+   // }
     if (points === 45) {
         // gameBox.innerHTML = "You WON!"
         win.style.display = 'flex';
