@@ -204,4 +204,11 @@ td {
 }
 
 
+.instruction p {
+    margin: 0;
+    padding: 10px;
+    background: #424242;
+    color: antiquewhite;
+    text-align: center;
+}
 
