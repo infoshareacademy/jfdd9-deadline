@@ -10,6 +10,7 @@ $('.nav-link').click(function(event){
 var links = document.querySelectorAll('.nav-link');
 var menu = document.querySelector('nav');
 var hero = document.querySelector('header.hero');
+var subscribe = document.querySelector('#subscribe');
 
 window.addEventListener('scroll', function (event) {
     var currentPosition = window.pageYOffset;
@@ -28,8 +29,6 @@ window.addEventListener('scroll', function (event) {
             links[index].parentNode.classList.add('active')
         }
 
-
-        console.log(hero.offsetHeight);
         if (currentPosition < hero.offsetHeight){
             links.forEach(function (link) {
                 link.parentNode.classList.remove('active')
